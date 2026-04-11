@@ -16,8 +16,8 @@
     <div class="section-description">
       <span
         >Hub is a local-first gateway for services. Publish APIs once, expose them through one endpoint. Use one
-        protocol for request and stream. Lite is for isolated local use. Pro adds keys, groups, permissions, proxy,
-        and merge.</span
+        protocol for request and stream. Lite is for isolated local use. Pro adds keys, groups, permissions, proxy, and
+        merge.</span
       >
       <span class="span"> </span>
       <span class="less-glue-code">Less glue code, fewer “which port is this?” moments.</span>
@@ -60,7 +60,6 @@
   .icon3 {
     position: absolute;
     inset: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;

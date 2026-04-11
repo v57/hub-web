@@ -73,8 +73,8 @@
     width: 100%;
     min-height: 60px;
     box-sizing: border-box;
-    border-radius: 20px;
-    border: 1px solid #eee;
+    border-radius: 30px;
+    border: 1px solid #efefef;
     background: rgba(255, 255, 255, 0.2);
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
