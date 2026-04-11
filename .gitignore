@@ -1,0 +1,7 @@
+.svelte-kit/
+artifacts/
+node_modules/
+static/
+tests/
+.DS_Store
+bun.lock

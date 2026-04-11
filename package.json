@@ -1,0 +1,22 @@
+{
+  "name": "hub-figma",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "svelte-kit sync && vite build",
+    "preview": "vite preview",
+    "test": "bun test",
+    "screenshot": "bun run scripts/capture-screenshots.ts"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "7.0.1",
+    "@sveltejs/kit": "2.57.1",
+    "@sveltejs/vite-plugin-svelte": "7.0.0",
+    "@types/node": "25.6.0",
+    "playwright": "1.59.1",
+    "svelte": "5.55.3",
+    "typescript": "6.0.2",
+    "vite": "8.0.8"
+  }
+}
