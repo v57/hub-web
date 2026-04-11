@@ -26,6 +26,18 @@ export type HomeBuildCard = {
   description: string;
 };
 
+export type HomeGetStartedStep = {
+  title: string;
+  terminal: string;
+  command: string;
+};
+
+export type HomeGetStartedPlatform = {
+  name: string;
+  description?: string;
+  steps: HomeGetStartedStep[];
+};
+
 export type HomeCommunityLink = {
   outerClass: string;
   imageSrc: string;
@@ -165,6 +177,50 @@ export const buildCards: HomeBuildCard[] = [
     src: '/files/features/operations.svg',
     title: 'Operations',
     description: 'Hub Launcher packages app deployment and running process controls into one simple control area.'
+  }
+];
+
+export const getStartedPlatforms: HomeGetStartedPlatform[] = [
+  {
+    name: 'macOS',
+    steps: [
+      {
+        title: 'Install Bun',
+        terminal: 'Terminal',
+        command: 'curl -fsSL https://bun.sh/install | bash'
+      },
+      {
+        title: 'Run',
+        terminal: 'Terminal',
+        command: 'bunx v57/hub'
+      }
+    ]
+  },
+  {
+    name: 'Docker',
+    description: 'Docker allows to run Hub server on a virtual machine. Available for macOS, Linux and Windows.',
+    steps: [
+      {
+        title: 'Run',
+        terminal: 'Terminal',
+        command: 'docker pull v57dev/hub\ndocker run -d -p 1997:1997 --name Hub v57dev/hub'
+      }
+    ]
+  },
+  {
+    name: 'Windows',
+    steps: [
+      {
+        title: 'Install Bun',
+        terminal: 'Powershell',
+        command: 'powershell -c "irm bun.sh/install.ps1 | iex"'
+      },
+      {
+        title: 'Run',
+        terminal: 'Powershell',
+        command: 'bunx v57/hub'
+      }
+    ]
   }
 ];
 
