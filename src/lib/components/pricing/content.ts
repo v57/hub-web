@@ -55,10 +55,22 @@ export const proPlan: PricingPlan = {
 
 export const supportButtons: SupportButton[] = [
   {
-    href: 'https://github.com/v57',
-    iconClass: 'screenshot-2026-02-27-at-1832',
-    src: '/files/apps/bybit.svg',
-    label: 'Bybit'
+    href: 'https://discord.com/invite/v57',
+    iconClass: 'vector-icon',
+    src: '/files/apps/discord.svg',
+    label: 'Discord'
+  },
+  {
+    href: 'https://www.patreon.com/v57',
+    iconClass: 'vector-icon',
+    src: '/files/apps/patreon.svg',
+    label: 'Patreon'
+  },
+  {
+    href: 'https://boosty.to/v57',
+    iconClass: 'vector-icon',
+    src: '/files/apps/boosty.svg',
+    label: 'Boosty'
   },
   {
     href: 'https://github.com/v57',
@@ -67,16 +79,28 @@ export const supportButtons: SupportButton[] = [
     label: 'GitHub'
   },
   {
-    href: 'https://github.com/v57',
+    href: 'https://www.buymeacoffee.com/v57',
     iconClass: 'vector-icon',
-    src: '/files/apps/discord.svg',
-    label: 'Discord'
-  },
-  {
-    href: 'https://github.com/v57',
-    iconClass: 'idr5voioyc-logos-1-icon',
     src: '/files/apps/buymeacoffee.svg',
     label: 'Buy Me a Coffee'
+  },
+  {
+    href: 'https://ko-fi.com/v57',
+    iconClass: 'vector-icon',
+    src: '/files/apps/kofi.svg',
+    label: 'Ko-Fi'
+  },
+  {
+    href: 'https://tether.to/en/',
+    iconClass: 'vector-icon',
+    src: '/files/apps/usdt.svg',
+    label: 'USDT'
+  },
+  {
+    href: 'https://bitcoin.org/en/',
+    iconClass: 'vector-icon',
+    src: '/files/apps/btc.svg',
+    label: 'BTC'
   }
 ];
 

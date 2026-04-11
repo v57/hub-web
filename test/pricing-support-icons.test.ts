@@ -2,7 +2,16 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'bun:test';
 
-const supportIconFiles = ['github.svg', 'discord.svg', 'reddit.svg', 'twitter.svg'] as const;
+const supportIconFiles = [
+  'discord.svg',
+  'patreon.svg',
+  'boosty.svg',
+  'github.svg',
+  'buymeacoffee.svg',
+  'kofi.svg',
+  'usdt.svg',
+  'btc.svg'
+] as const;
 
 describe('pricing support icons', () => {
   it('keeps the svg assets tightly cropped and shadow-free', () => {
@@ -11,9 +20,9 @@ describe('pricing support icons', () => {
 
       expect(svg).not.toContain('<filter');
       expect(svg).not.toContain('filter=');
-      expect(svg).toContain('<rect');
       expect(svg).toContain('width="64"');
       expect(svg).toContain('height="64"');
+      expect(svg).toContain('<path');
     }
   });
 });

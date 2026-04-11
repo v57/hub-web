@@ -11,17 +11,26 @@ describe('pricing content', () => {
 
   it('keeps the support options in one place', () => {
     expect(supportButtons.map((button) => button.label)).toEqual([
-      'Bybit',
-      'GitHub',
       'Discord',
-      'Buy Me a Coffee'
+      'Patreon',
+      'Boosty',
+      'GitHub',
+      'Buy Me a Coffee',
+      'Ko-Fi',
+      'USDT',
+      'BTC'
     ]);
     expect(supportButtons.map((button) => button.src)).toEqual([
-      '/files/apps/bybit.svg',
-      '/files/apps/github.svg',
       '/files/apps/discord.svg',
-      '/files/apps/buymeacoffee.svg'
+      '/files/apps/patreon.svg',
+      '/files/apps/boosty.svg',
+      '/files/apps/github.svg',
+      '/files/apps/buymeacoffee.svg',
+      '/files/apps/kofi.svg',
+      '/files/apps/usdt.svg',
+      '/files/apps/btc.svg'
     ]);
-    expect(supportButtons.every((button) => button.href === 'https://github.com/v57')).toBe(true);
+    expect(supportButtons).toHaveLength(8);
+    expect(supportButtons.every((button) => button.href.startsWith('https://'))).toBe(true);
   });
 });
