@@ -11,10 +11,6 @@
   const toolbar = getToolbarConfig('home');
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="/index.css" />
-</svelte:head>
-
 <div class="home">
   <HomeHero {platforms} />
   <HomeGetStarted />
@@ -53,3 +49,77 @@
 
   <Toolbar {...toolbar} />
 </div>
+
+<style>
+  .home {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    isolation: isolate;
+    text-align: center;
+    font-size: 20px;
+    color: #2b2b2c;
+  }
+
+  .keep-exploring-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 240px;
+    z-index: 3;
+  }
+
+  .exploration-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 100%;
+  }
+
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .how-built-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-it-built-section {
+    align-self: stretch;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 240px;
+    z-index: 4;
+  }
+
+  .join-our-community-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 120px;
+    z-index: 5;
+  }
+
+  .logo-text {
+    position: relative;
+  }
+
+  .hub {
+    color: #fa243c;
+  }
+</style>

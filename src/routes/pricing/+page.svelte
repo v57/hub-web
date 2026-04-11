@@ -14,10 +14,6 @@
   const toolbar = getToolbarConfig('pricing');
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="/pricing/index.css" />
-</svelte:head>
-
 <div class="pricing">
   <div class="pricing-section">
     <div class="title">Both plans are free</div>
@@ -31,3 +27,45 @@
 
   <Toolbar {...toolbar} />
 </div>
+
+<style>
+  .pricing {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    isolation: isolate;
+    text-align: center;
+    font-size: 20px;
+    color: #2b2b2c;
+  }
+
+  .pricing-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0 0;
+    gap: 40px;
+    z-index: 0;
+  }
+
+  .title {
+    position: relative;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .price-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 40px;
+    text-align: left;
+    font-size: 16px;
+    color: #fa243c;
+  }
+</style>

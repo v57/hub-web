@@ -33,3 +33,80 @@
     <div class="sort-option">{sortSecondary}</div>
   </div>
 </div>
+
+<style>
+  .sortfilter {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .filtersearch {
+    width: 346px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border-radius: 200px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    gap: 0;
+  }
+
+  .chip {
+    display: flex;
+    align-items: flex-start;
+    color: #fff;
+  }
+
+  .button10 {
+    border-radius: 200px;
+    background-color: #fa243c;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+  }
+
+  .chip2 {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .tags2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+  }
+
+  .sort-options {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #bbbbbe;
+  }
+
+  .button-label {
+    position: relative;
+    letter-spacing: -0.32px;
+    font-weight: 600;
+  }
+
+  .button-label12 {
+    position: relative;
+    letter-spacing: -0.32px;
+    font-weight: 600;
+    color: #fa243c;
+  }
+
+  .sort-option {
+    position: relative;
+    letter-spacing: -0.32px;
+    font-weight: 600;
+    color: #8e8e93;
+  }
+</style>

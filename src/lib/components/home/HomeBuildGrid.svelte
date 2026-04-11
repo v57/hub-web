@@ -10,3 +10,16 @@
     <HomeBuildCard {card} />
   {/each}
 </div>
+
+<style>
+  .how-built-information {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 24px;
+    font-size: 16px;
+  }
+</style>

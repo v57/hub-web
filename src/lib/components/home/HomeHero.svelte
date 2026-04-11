@@ -29,3 +29,165 @@
     </div>
   </div>
 </div>
+
+<style>
+  .hero-section {
+    align-self: stretch;
+    height: 800px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    isolation: isolate;
+    z-index: 0;
+    text-align: left;
+    font-size: 320px;
+    color: #fa243c;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    z-index: 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-text {
+    position: relative;
+  }
+
+  .button {
+    border-radius: 200px;
+    background-color: #fa243c;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 40px;
+    box-sizing: border-box;
+    min-height: 32px;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .container2 {
+    margin: 0 !important;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    z-index: 1;
+    font-size: 16px;
+    color: #bbbbbe;
+  }
+
+  .available-on {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .platforms {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: 12px;
+    color: #8e8e93;
+  }
+
+  .platform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .platform-name {
+    position: relative;
+    letter-spacing: -0.32px;
+    font-weight: 600;
+  }
+
+  .iconplatform {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconplatform3 {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconplatform8 {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .vector-icon,
+  .group-icon,
+  .group-icon2,
+  .group-icon3,
+  .group-icon4,
+  .vector-icon2,
+  .group-icon5 {
+    position: relative;
+    max-height: 100%;
+  }
+
+  .vector-icon {
+    width: 12px;
+  }
+
+  .group-icon {
+    width: 8.6px;
+  }
+
+  .group-icon2 {
+    width: 17.8px;
+  }
+
+  .group-icon3 {
+    width: 24.9px;
+  }
+
+  .group-icon4 {
+    width: 9.7px;
+  }
+
+  .vector-icon2 {
+    width: 14px;
+  }
+
+  .group-icon5 {
+    width: 13.8px;
+  }
+
+  .available-on .platforms img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+  }
+</style>

@@ -24,3 +24,74 @@
     </div>
   </div>
 </div>
+
+<style>
+  .what-is-hub-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0;
+    z-index: 2;
+    font-size: 16px;
+  }
+
+  .title5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-hub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: left;
+  }
+
+  .logo-icon {
+    width: 64px;
+    height: 64px;
+    position: relative;
+  }
+
+  .icon3 {
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  .title6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 20px;
+  }
+
+  .hub {
+    color: #fa243c;
+  }
+
+  .section-description {
+    width: 711px;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    color: #8e8e93;
+  }
+
+  .span {
+    color: #2b2b2c;
+  }
+
+  .less-glue-code {
+    color: #bbbbbe;
+  }
+</style>

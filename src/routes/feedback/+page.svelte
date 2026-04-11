@@ -14,10 +14,6 @@
   const toolbar = getToolbarConfig('feedback');
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="/feedback/index.css" />
-</svelte:head>
-
 <div class="feedback">
   <div class="feedback-section">
     <div class="content">
@@ -32,3 +28,51 @@
 
   <Toolbar {...toolbar} />
 </div>
+
+<style>
+  .feedback {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    isolation: isolate;
+    text-align: center;
+    font-size: 14px;
+    color: #8e8e93;
+  }
+
+  .feedback-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0;
+    z-index: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .cards-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .card-count {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: -0.32px;
+    font-weight: 600;
+  }
+</style>

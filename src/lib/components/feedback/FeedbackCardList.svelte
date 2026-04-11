@@ -10,3 +10,14 @@
     <FeedbackCard {card} />
   {/each}
 </div>
+
+<style>
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #2b2b2c;
+  }
+</style>
