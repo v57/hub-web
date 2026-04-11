@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { extractBody } from '$lib/raw-html';
-  import html from '../../index.html?raw';
-
-  const body = extractBody(html);
+  export let data: { body: string };
 </script>
 
 <svelte:head>
   <link rel="stylesheet" href="/index.css" />
 </svelte:head>
 
-{@html body}
+{@html data.body}

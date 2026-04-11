@@ -1,5 +1,4 @@
-import { mkdir, stat } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { chromium } from 'playwright';
 
@@ -8,61 +7,11 @@ export type ScreenshotPage = {
   path: string;
 };
 
-export const currentPages: ScreenshotPage[] = [
-  { name: 'home', path: '/index.html' },
-  { name: 'pricing', path: '/pricing.html' },
-  { name: 'feedback', path: '/feedback.html' }
-];
-
 export const appPages: ScreenshotPage[] = [
   { name: 'home', path: '/' },
   { name: 'pricing', path: '/pricing' },
   { name: 'feedback', path: '/feedback' }
 ];
-
-export function startStaticServer(rootDir: string, port = 4173) {
-  const resolvedRoot = path.resolve(rootDir);
-
-  const server = Bun.serve({
-    hostname: '127.0.0.1',
-    port,
-    async fetch(request) {
-      const url = new URL(request.url);
-      let pathname = decodeURIComponent(url.pathname);
-
-      if (pathname === '/') {
-        pathname = '/index.html';
-      } else if (pathname === '/pricing') {
-        pathname = '/pricing.html';
-      } else if (pathname === '/feedback') {
-        pathname = '/feedback.html';
-      }
-
-      const filePath = path.resolve(resolvedRoot, `.${pathname}`);
-
-      if (!filePath.startsWith(resolvedRoot)) {
-        return new Response('Forbidden', { status: 403 });
-      }
-
-      if (!existsSync(filePath)) {
-        return new Response('Not found', { status: 404 });
-      }
-
-      const fileStats = await stat(filePath);
-
-      if (!fileStats.isFile()) {
-        return new Response('Not found', { status: 404 });
-      }
-
-      return new Response(Bun.file(filePath));
-    }
-  });
-
-  return {
-    baseUrl: `http://127.0.0.1:${server.port}`,
-    stop: () => server.stop()
-  };
-}
 
 export async function captureScreenshots(options: {
   baseUrl: string;
@@ -117,19 +66,11 @@ function parseArgs(argv: string[]) {
 if (import.meta.main) {
   const args = parseArgs(Bun.argv.slice(2));
   const outDir = args.out ?? 'screenshots/current';
-  const mode = args.mode ?? 'current';
-  const baseUrl = args['base-url'];
-  const rootDir = args.root ?? '.';
-  const pages = mode === 'app' ? appPages : currentPages;
-  const server = baseUrl ? null : startStaticServer(rootDir);
+  const baseUrl = args['base-url'] ?? 'http://127.0.0.1:5173';
 
-  try {
-    await captureScreenshots({
-      baseUrl: baseUrl ?? server!.baseUrl,
-      pages,
-      outDir
-    });
-  } finally {
-    server?.stop();
-  }
+  await captureScreenshots({
+    baseUrl,
+    pages: appPages,
+    outDir
+  });
 }
