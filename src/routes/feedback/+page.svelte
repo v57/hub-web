@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Toolbar from '$lib/components/Toolbar.svelte';
+  import { getToolbarConfig } from '$lib/components/toolbar';
+
   type TopTag = {
     className: 'button' | 'button2';
     label: string;
@@ -162,6 +165,8 @@
       ]
     }
   ];
+
+  const toolbar = getToolbarConfig('feedback');
 </script>
 
 <svelte:head>
@@ -274,30 +279,5 @@
     </div>
   </div>
 
-  <div class="navigation">
-    <div class="nav-bar-content">
-      <div class="hub-link">
-        <div class="hub-link">
-          <div class="logo-icon">
-            <img class="logocompact-icon" src="/files/icon/compact.png" alt="" />
-          </div>
-          <div class="wordmark">Hub</div>
-        </div>
-        <div class="name-of-the-page">
-          <b class="platform-description">Feedback</b>
-        </div>
-      </div>
-      <div class="nav-button">
-        <a class="button43" href="/pricing">
-          <div class="button-label">Pricing</div>
-        </a>
-        <div class="button44">
-          <div class="button-label">Download</div>
-        </div>
-        <div class="button45">
-          <div class="button-label">Open</div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Toolbar {...toolbar} />
 </div>

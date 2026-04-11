@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Toolbar from '$lib/components/Toolbar.svelte';
+  import { getToolbarConfig } from '$lib/components/toolbar';
+
   type FeatureItem = {
     label: string;
     src: string;
@@ -44,6 +47,8 @@
     },
     { iconClass: 'idr5voioyc-logos-1-icon', src: '/files/apps/coffee.png', label: 'Buy Me a Coffee' }
   ];
+
+  const toolbar = getToolbarConfig('pricing');
 </script>
 
 <svelte:head>
@@ -135,30 +140,5 @@
     </div>
   </div>
 
-  <div class="navigation">
-    <div class="nav-bar-content">
-      <div class="hub-link">
-        <div class="logo-hub">
-          <div class="logo-icon">
-            <img class="idr5voioyc-logos-1-icon" src="/files/apps/coffee.png" alt="" />
-          </div>
-          <div class="wordmark">Hub</div>
-        </div>
-        <div class="name-of-the-page">
-          <b class="plan-name">Pricing</b>
-        </div>
-      </div>
-      <div class="nav-button">
-        <a class="button" href="/feedback">
-          <div class="button-label">Feedback</div>
-        </a>
-        <div class="button2">
-          <div class="button-label">Download</div>
-        </div>
-        <div class="button3">
-          <div class="button-label">Open</div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Toolbar {...toolbar} />
 </div>

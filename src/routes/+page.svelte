@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Toolbar from '$lib/components/Toolbar.svelte';
+  import { getToolbarConfig } from '$lib/components/toolbar';
+
   type Platform = {
     name: string;
     src: string;
@@ -209,6 +212,8 @@
       description: '@v57/hub · Announcements & releases'
     }
   ];
+
+  const toolbar = getToolbarConfig('home');
 </script>
 
 <svelte:head>
@@ -418,30 +423,5 @@
     </div>
   </div>
 
-  <div class="navigation">
-    <div class="nav-bar-content">
-      <div class="hub-link">
-        <div class="logo-hub2">
-          <div class="logo-icon2">
-            <img class="logocompact-icon" src="/files/icon/compact.png" alt="" />
-          </div>
-          <div class="wordmark">Hub</div>
-        </div>
-      </div>
-      <div class="nav-button">
-        <a class="button11" href="/pricing">
-          <div class="platform-name">Pricing</div>
-        </a>
-        <a class="button11" href="/feedback">
-          <div class="platform-name">Feedback</div>
-        </a>
-        <div class="button13">
-          <div class="platform-name">Download</div>
-        </div>
-        <div class="button14">
-          <div class="platform-name">Open</div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Toolbar {...toolbar} />
 </div>
