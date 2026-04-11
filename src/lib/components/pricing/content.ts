@@ -19,8 +19,6 @@ export type SupportButton = {
   iconClass: string;
   label: string;
   src: string;
-  secondaryIconClass?: string;
-  secondarySrc?: string;
 };
 
 export const litePlan: PricingPlan = {
@@ -59,29 +57,25 @@ export const supportButtons: SupportButton[] = [
   {
     href: 'https://github.com/v57',
     iconClass: 'screenshot-2026-02-27-at-1832',
-    src: '/files/apps/bybit.png',
+    src: '/files/apps/bybit.svg',
     label: 'Bybit'
   },
   {
     href: 'https://github.com/v57',
     iconClass: 'vector-icon',
     src: '/files/apps/github.svg',
-    secondaryIconClass: 'vector-icon2',
-    secondarySrc: '/files/apps/github.svg',
     label: 'GitHub'
   },
   {
     href: 'https://github.com/v57',
     iconClass: 'vector-icon',
     src: '/files/apps/discord.svg',
-    secondaryIconClass: 'icon',
-    secondarySrc: '/files/apps/discord.svg',
     label: 'Discord'
   },
   {
     href: 'https://github.com/v57',
     iconClass: 'idr5voioyc-logos-1-icon',
-    src: '/files/apps/coffee.png',
+    src: '/files/apps/buymeacoffee.svg',
     label: 'Buy Me a Coffee'
   }
 ];

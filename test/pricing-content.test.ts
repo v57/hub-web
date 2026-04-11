@@ -16,6 +16,12 @@ describe('pricing content', () => {
       'Discord',
       'Buy Me a Coffee'
     ]);
+    expect(supportButtons.map((button) => button.src)).toEqual([
+      '/files/apps/bybit.svg',
+      '/files/apps/github.svg',
+      '/files/apps/discord.svg',
+      '/files/apps/buymeacoffee.svg'
+    ]);
     expect(supportButtons.every((button) => button.href === 'https://github.com/v57')).toBe(true);
   });
 });

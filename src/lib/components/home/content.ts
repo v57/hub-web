@@ -28,10 +28,8 @@ export type HomeBuildCard = {
 
 export type HomeCommunityLink = {
   outerClass: string;
-  imageOneSrc: string;
-  imageOneClass: string;
-  imageTwoClass: string;
-  imageTwoSrc: string;
+  imageSrc: string;
+  imageClass: string;
   title: string;
   description: string;
 };
@@ -173,37 +171,29 @@ export const buildCards: HomeBuildCard[] = [
 export const communityLinks: HomeCommunityLink[] = [
   {
     outerClass: 'link',
-    imageOneSrc: '/files/apps/github.svg',
-    imageOneClass: 'vector-icon6',
-    imageTwoClass: 'vector-icon7',
-    imageTwoSrc: '/files/apps/github.svg',
+    imageSrc: '/files/apps/github.svg',
+    imageClass: 'vector-icon6',
     title: 'GitHub',
     description: '@v57/hub · Source code & contributions'
   },
   {
     outerClass: 'link2',
-    imageOneSrc: '/files/apps/reddit.svg',
-    imageOneClass: 'vector-icon6',
-    imageTwoClass: 'group-icon6',
-    imageTwoSrc: '/files/apps/reddit.svg',
+    imageSrc: '/files/apps/reddit.svg',
+    imageClass: 'vector-icon6',
     title: 'Reddit',
     description: '@v57/hub · Discussions & feedback'
   },
   {
     outerClass: 'link3',
-    imageOneSrc: '/files/apps/discord.svg',
-    imageOneClass: 'vector-icon6',
-    imageTwoClass: 'icon4',
-    imageTwoSrc: '/files/apps/discord.svg',
+    imageSrc: '/files/apps/discord.svg',
+    imageClass: 'vector-icon6',
     title: 'Discord',
     description: '@v57/hub · Chat & updates'
   },
   {
     outerClass: 'link4',
-    imageOneSrc: '/files/apps/twitter.svg',
-    imageOneClass: 'vector-icon6',
-    imageTwoClass: 'vector-icon11',
-    imageTwoSrc: '/files/apps/twitter.svg',
+    imageSrc: '/files/apps/twitter.svg',
+    imageClass: 'vector-icon6',
     title: 'Twitter',
     description: '@v57/hub · Announcements & releases'
   }

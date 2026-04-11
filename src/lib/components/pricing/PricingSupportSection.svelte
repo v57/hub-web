@@ -1,6 +1,6 @@
 <script lang="ts">
-  import PricingSupportButton from './PricingSupportButton.svelte';
   import type { SupportButton } from './content';
+  import IconLink from '../common/IconLink.svelte';
 
   export let buttons: SupportButton[] = [];
   export let description: string;
@@ -17,7 +17,15 @@
     </div>
     <div class="support-buttons-container">
       {#each buttons as button}
-        <PricingSupportButton {button} />
+        <IconLink
+          href={button.href}
+          imageSrc={button.src}
+          imageClass={button.iconClass}
+          layout="vertical"
+          size={64}
+        >
+          <div class="button-label">{button.label}</div>
+        </IconLink>
       {/each}
     </div>
   </div>
@@ -67,5 +75,11 @@
     gap: 32px;
     text-align: left;
     font-size: 12px;
+  }
+
+  .button-label {
+    position: relative;
+    letter-spacing: -0.32px;
+    font-weight: 600;
   }
 </style>
