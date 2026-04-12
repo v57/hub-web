@@ -43,10 +43,10 @@
 <style>
   .cardfeedback {
     align-self: stretch;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / 0.03);
     border-radius: 16px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -86,31 +86,31 @@
   }
 
   .status {
-    color: #34c759;
+    color: var(--color-status-success);
   }
 
   .status2 {
-    color: #ff453a;
+    color: var(--color-status-danger);
   }
 
   .status3 {
-    color: #34c759;
+    color: var(--color-status-success);
   }
 
   .status4 {
-    color: #5856d6;
+    color: var(--color-status-info);
   }
 
   .status5 {
-    color: #ff9500;
+    color: var(--color-status-warning);
   }
 
   .status7 {
-    color: #30d158;
+    color: var(--color-status-success-alt);
   }
 
   .status8 {
-    color: #007aff;
+    color: var(--color-status-link);
   }
 
   .status-item {
@@ -134,7 +134,7 @@
     gap: 32px;
     text-align: justify;
     font-size: 14px;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 
   .content3 {
@@ -157,14 +157,14 @@
     gap: 8px;
     text-align: left;
     font-size: 12px;
-    color: #fa243c;
+    color: var(--color-accent);
   }
 
   .date {
     position: relative;
     letter-spacing: -0.32px;
     font-weight: 600;
-    color: #bbbbbe;
+    color: var(--color-text-subtle);
   }
 
   .card-aside {
@@ -175,7 +175,7 @@
     gap: 4px;
     text-align: left;
     font-size: 16px;
-    color: #2b2b2c;
+    color: var(--color-text);
   }
 
   .buttonicon2 {
@@ -188,7 +188,7 @@
     position: absolute;
     top: calc(50% - 11.76px);
     left: calc(50% - 12.73px);
-    filter: drop-shadow(0 2px 12.2px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1));
     width: 26px;
     height: 24px;
   }

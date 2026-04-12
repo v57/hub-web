@@ -21,7 +21,7 @@
     align-items: flex-start;
     gap: 8px;
     font-size: 14px;
-    color: #2b2b2c;
+    color: var(--color-text);
   }
 
   .feature-item {

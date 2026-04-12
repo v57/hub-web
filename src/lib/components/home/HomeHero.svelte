@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { HomePlatform } from './content';
+  import type { HomePlatform } from './content'
 
-  export let platforms: HomePlatform[] = [];
+  export let platforms: HomePlatform[] = []
 </script>
 
 <div class="hero-section">
@@ -59,6 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: Rubik, ui-rounded, sans-serif;
   }
 
   .logo-text {
@@ -67,7 +68,7 @@
 
   .button {
     border-radius: 200px;
-    background-color: #fa243c;
+    background-color: var(--color-accent);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -77,7 +78,7 @@
     box-sizing: border-box;
     min-height: 32px;
     font-size: 16px;
-    color: #fff;
+    color: var(--color-accent-contrast);
   }
 
   .container2 {
@@ -90,7 +91,7 @@
     padding: 80px;
     z-index: 1;
     font-size: 16px;
-    color: #bbbbbe;
+    color: var(--color-text-subtle);
   }
 
   .available-on {
@@ -107,7 +108,7 @@
     align-items: flex-end;
     gap: 4px;
     font-size: 12px;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 
   .platform {

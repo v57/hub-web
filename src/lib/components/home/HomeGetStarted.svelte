@@ -161,7 +161,7 @@
 <style>
   .get-started-section {
     align-self: stretch;
-    background-color: #f4f4f4;
+    background-color: var(--color-surface-muted);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,7 +188,7 @@
     gap: 16px;
     text-align: center;
     font-size: 12px;
-    color: #8e8e93;
+    color: var(--color-text-muted);
     width: fit-content;
   }
 
@@ -196,10 +196,10 @@
     position: relative;
     isolation: isolate;
     align-self: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / 0.03);
     border-radius: 200px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,7 +215,7 @@
     left: 0;
     z-index: 0;
     border-radius: 200px;
-    background-color: #fa243c;
+    background-color: var(--color-accent);
     transition:
       left 220ms cubic-bezier(0.22, 1, 0.36, 1),
       width 220ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -235,13 +235,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #8e8e93;
+    color: var(--color-text-muted);
     border-radius: 200px;
     padding: 4px 8px;
   }
 
   .chip.selected {
-    color: #fff;
+    color: var(--color-accent-contrast);
   }
 
   .instructions {
@@ -269,16 +269,16 @@
   }
 
   .step-terminal {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / 0.03);
     border-radius: 16px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
     padding: 12px 16px;
     gap: 20px;
-    color: #fa243c;
+    color: var(--color-accent);
     width: fit-content;
   }
 
@@ -307,7 +307,7 @@
     margin: 0;
     position: relative;
     letter-spacing: -0.32px;
-    color: #8e8e93;
+    color: var(--color-text-muted);
     font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     white-space: pre-wrap;
     word-break: break-word;
@@ -320,9 +320,9 @@
     padding: 0;
     height: 26px;
     width: 26px;
-    box-shadow: 0 2px 12.2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
     border-radius: 200px;
-    background-color: #fff;
+    background-color: var(--color-surface);
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -338,9 +338,9 @@
   }
 
   .buttonicon.copied {
-    background-color: #fa243c;
+    background-color: var(--color-accent);
     transform: scale(1.08);
-    box-shadow: 0 6px 18px rgba(250, 36, 60, 0.28);
+    box-shadow: 0 6px 18px rgb(var(--color-accent-rgb) / 0.28);
     animation: copy-pop 320ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -370,7 +370,7 @@
 
   .platform-description {
     margin: 0;
-    color: #8e8e93;
+    color: var(--color-text-muted);
     line-height: 1.4;
     text-align: center;
   }

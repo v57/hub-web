@@ -54,8 +54,8 @@
   .container {
     align-self: stretch;
     border-radius: 200px;
-    background-color: #f4f4f4;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface-muted);
+    border: 1px solid var(--color-border-soft);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -90,7 +90,7 @@
     position: absolute;
     top: calc(50% - 18px);
     left: calc(50% - 18px);
-    filter: drop-shadow(0 2px 12.2px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1));
     width: 36px;
     height: 36px;
   }
@@ -105,6 +105,6 @@
     gap: 12px;
     text-align: left;
     font-size: 12px;
-    color: #fa243c;
+    color: var(--color-accent);
   }
 </style>

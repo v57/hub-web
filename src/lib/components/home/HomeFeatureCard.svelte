@@ -65,10 +65,10 @@
 
   .iconframe,
   .iconframe2 {
-    box-shadow: 0 2px 13.9px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 13.9px rgb(var(--color-shadow-rgb) / 0.06);
     border-radius: 16px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -196,7 +196,7 @@
     align-items: flex-start;
     gap: 4px;
     font-size: 12px;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 
   .section-title2 {
@@ -220,12 +220,12 @@
     align-items: center;
     gap: 8px;
     font-size: 12px;
-    color: #fa243c;
+    color: var(--color-accent);
   }
 
   .button3 {
     border-radius: 200px;
-    background-color: #fee9eb;
+    background-color: var(--color-surface-accent-soft);
     display: flex;
     align-items: center;
     justify-content: center;

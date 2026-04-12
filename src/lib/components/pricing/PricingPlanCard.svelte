@@ -26,10 +26,12 @@
 <style>
   .price-card-left-container,
   .price-card-right-container {
-    box-shadow: 0 4px 12px rgba(250, 36, 60, 0.06), 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow:
+      0 4px 12px rgb(var(--color-accent-rgb) / 0.06),
+      0 4px 20px rgb(var(--color-shadow-rgb) / 0.06);
     border-radius: 16px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -71,7 +73,7 @@
 
   .buttonget {
     border-radius: 200px;
-    background-color: #fee9eb;
+    background-color: var(--color-surface-accent-soft);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,14 +87,14 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    color: #fff;
+    color: var(--color-accent-contrast);
   }
 
   .buttonget2,
   .buttonget4 {
     height: 35px;
     border-radius: 200px;
-    background-color: #fa243c;
+    background-color: var(--color-accent);
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -117,7 +119,7 @@
     font-size: 12px;
     letter-spacing: -0.32px;
     font-weight: 600;
-    color: #bbbbbe;
+    color: var(--color-text-subtle);
     text-align: center;
   }
 

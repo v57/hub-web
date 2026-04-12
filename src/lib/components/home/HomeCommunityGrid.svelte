@@ -71,6 +71,6 @@
     font-size: 12px;
     letter-spacing: -0.32px;
     font-weight: 600;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 </style>

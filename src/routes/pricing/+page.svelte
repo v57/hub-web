@@ -32,7 +32,7 @@
   .pricing {
     width: 100%;
     position: relative;
-    background-color: #fff;
+    background-color: var(--color-page);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@
     isolation: isolate;
     text-align: center;
     font-size: 20px;
-    color: #2b2b2c;
+    color: var(--color-text);
   }
 
   .pricing-section {
@@ -66,6 +66,6 @@
     gap: 40px;
     text-align: left;
     font-size: 16px;
-    color: #fa243c;
+    color: var(--color-accent);
   }
 </style>

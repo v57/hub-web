@@ -33,7 +33,7 @@
   .feedback {
     width: 100%;
     position: relative;
-    background-color: #fff;
+    background-color: var(--color-page);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
     isolation: isolate;
     text-align: center;
     font-size: 14px;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 
   .feedback-section {

@@ -74,7 +74,7 @@
   }
 
   .hub {
-    color: #fa243c;
+    color: var(--color-accent);
   }
 
   .section-description {
@@ -83,14 +83,14 @@
     font-size: 14px;
     letter-spacing: -0.02em;
     display: inline-block;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 
   .span {
-    color: #2b2b2c;
+    color: var(--color-text);
   }
 
   .less-glue-code {
-    color: #bbbbbe;
+    color: var(--color-text-subtle);
   }
 </style>

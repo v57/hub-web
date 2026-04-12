@@ -65,7 +65,7 @@
     position: relative;
     font-size: 14px;
     letter-spacing: -0.02em;
-    color: #8e8e93;
+    color: var(--color-text-muted);
     text-align: left;
   }
 

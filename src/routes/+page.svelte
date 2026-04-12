@@ -54,7 +54,7 @@
   .home {
     width: 100%;
     position: relative;
-    background-color: #fff;
+    background-color: var(--color-page);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -62,7 +62,7 @@
     isolation: isolate;
     text-align: center;
     font-size: 20px;
-    color: #2b2b2c;
+    color: var(--color-text);
   }
 
   .keep-exploring-section {
@@ -98,7 +98,7 @@
 
   .how-it-built-section {
     align-self: stretch;
-    background-color: #f4f4f4;
+    background-color: var(--color-surface-muted);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,6 +120,6 @@
   }
 
   .hub {
-    color: #fa243c;
+    color: var(--color-accent);
   }
 </style>

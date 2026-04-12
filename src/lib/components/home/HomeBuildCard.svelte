@@ -17,10 +17,10 @@
 <style>
   .cardpossibilities {
     height: 200px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / 0.03);
     border-radius: 32px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -112,6 +112,6 @@
     position: relative;
     font-size: 14px;
     letter-spacing: -0.02em;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 </style>

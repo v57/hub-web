@@ -51,7 +51,7 @@
     position: relative;
     border-radius: var(--icon-radius);
     overflow: hidden;
-    box-shadow: 0 2px 12.2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
   }
 
   .icon-link-tile img {

@@ -18,6 +18,6 @@
     align-items: flex-start;
     gap: 16px;
     font-size: 16px;
-    color: #2b2b2c;
+    color: var(--color-text);
   }
 </style>

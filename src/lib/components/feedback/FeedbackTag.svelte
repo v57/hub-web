@@ -13,7 +13,7 @@
   .button,
   .button2 {
     border-radius: 200px;
-    border: 1px solid #fa243c;
+    border: 1px solid var(--color-accent);
     display: flex;
     align-items: center;
     padding: 4px 8px;
@@ -26,7 +26,7 @@
 
   .button11 {
     border-radius: 200px;
-    background-color: #fee9eb;
+    background-color: var(--color-surface-accent-soft);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,12 +35,12 @@
 
   .button13 {
     border-radius: 200px;
-    background-color: #f4f4f4;
+    background-color: var(--color-surface-muted);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4px 8px;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 
   .button-label {

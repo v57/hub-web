@@ -45,10 +45,10 @@
 
   .filtersearch {
     width: 346px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / 0.03);
     border-radius: 200px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -60,12 +60,12 @@
   .chip {
     display: flex;
     align-items: flex-start;
-    color: #fff;
+    color: var(--color-accent-contrast);
   }
 
   .button10 {
     border-radius: 200px;
-    background-color: #fa243c;
+    background-color: var(--color-accent);
     display: flex;
     align-items: center;
     padding: 4px 8px;
@@ -87,7 +87,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #bbbbbe;
+    color: var(--color-text-subtle);
   }
 
   .button-label {
@@ -100,13 +100,13 @@
     position: relative;
     letter-spacing: -0.32px;
     font-weight: 600;
-    color: #fa243c;
+    color: var(--color-accent);
   }
 
   .sort-option {
     position: relative;
     letter-spacing: -0.32px;
     font-weight: 600;
-    color: #8e8e93;
+    color: var(--color-text-muted);
   }
 </style>
