@@ -33,7 +33,7 @@
 <style>
   .hero-section {
     align-self: stretch;
-    height: 800px;
+    min-height: 100svh;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -190,5 +190,23 @@
     object-fit: contain;
     flex-shrink: 0;
     display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-section {
+      min-height: max(100vh, 830px);
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .logo {
+      font-size: 200px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .logo {
+      font-size: 160px;
+    }
   }
 </style>

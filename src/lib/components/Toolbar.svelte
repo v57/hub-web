@@ -196,4 +196,11 @@
     letter-spacing: -0.32px;
     font-weight: 600;
   }
+
+  @media (max-width: 767px) {
+    .toolbar__action--solid,
+    .toolbar__action--outline {
+      display: none;
+    }
+  }
 </style>

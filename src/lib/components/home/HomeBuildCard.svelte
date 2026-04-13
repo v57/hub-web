@@ -7,7 +7,13 @@
 <div class="cardpossibilities">
   <div class="container9">
     <div class={card.iconWrapperClass}>
-      <img class={card.imageClass} src={card.src} alt="" />
+      {#if card.imageClass === 'vector-icon5'}
+        <div class="icon-wrapper">
+          <img class={card.imageClass} src={card.src} alt="" />
+        </div>
+      {:else}
+        <img class={card.imageClass} src={card.src} alt="" />
+      {/if}
     </div>
     <b class="feature-title">{card.title}</b>
     <div class="description">{card.description}</div>
@@ -67,7 +73,15 @@
 
   .iconfeatures11 {
     width: 48.2px;
-    height: 38px;
+    height: 48px;
+  }
+
+  .icon-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .web-icon2,
@@ -102,9 +116,12 @@
   }
 
   .vector-icon5 {
-    top: calc(50% - 24px);
-    left: calc(50% - 31.1px);
-    width: 61px;
+    position: static;
+    display: block;
+    width: auto;
+    height: 48px;
+    max-height: 100%;
+    object-fit: contain;
   }
 
   .description {

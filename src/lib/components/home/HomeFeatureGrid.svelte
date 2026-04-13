@@ -14,12 +14,15 @@
 <style>
   .features-container {
     align-self: stretch;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(242px, 242px));
+    justify-content: center;
+    justify-items: start;
     gap: 24px;
     text-align: left;
     font-size: 16px;
+    width: 100%;
+    max-width: calc((242px * 3) + (24px * 2));
+    margin: 0 auto;
   }
 </style>
