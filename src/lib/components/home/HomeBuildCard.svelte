@@ -131,4 +131,79 @@
     letter-spacing: -0.02em;
     color: var(--color-text-muted);
   }
+
+  @media (max-width: 767px) {
+    .cardpossibilities {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .container9 {
+      width: 100%;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      column-gap: 12px;
+      row-gap: 8px;
+      align-items: start;
+    }
+
+    .container9 > .iconfeatures7,
+    .container9 > .iconfeatures8,
+    .container9 > .iconfeatures9,
+    .container9 > .iconfeatures10,
+    .container9 > .iconfeatures11 {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: auto;
+      height: auto;
+      flex: 0 0 auto;
+    }
+
+    .container9 > .iconfeatures7 .icon-wrapper,
+    .container9 > .iconfeatures8 .icon-wrapper,
+    .container9 > .iconfeatures9 .icon-wrapper,
+    .container9 > .iconfeatures10 .icon-wrapper,
+    .container9 > .iconfeatures11 .icon-wrapper {
+      width: auto;
+      height: auto;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .container9 > .feature-title {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: start;
+      text-align: left;
+      min-width: 0;
+    }
+
+    .container9 > .description {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: start;
+      margin-top: 0;
+      text-align: left;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .container9 .web-icon2,
+    .container9 .pro-icon2,
+    .container9 .service-icon2,
+    .container9 .vector-icon4,
+    .container9 .vector-icon5 {
+      position: static;
+      display: block;
+      width: 36px;
+      height: auto;
+      max-width: none;
+      max-height: none;
+    }
+  }
 </style>
