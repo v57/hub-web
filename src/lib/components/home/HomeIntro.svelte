@@ -28,6 +28,8 @@
 <style>
   .what-is-hub-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,11 +80,12 @@
   }
 
   .section-description {
-    width: 711px;
+    width: 100%;
+    max-width: 711px;
     position: relative;
     font-size: 14px;
     letter-spacing: -0.02em;
-    display: inline-block;
+    display: block;
     color: var(--color-text-muted);
   }
 
@@ -92,5 +95,17 @@
 
   .less-glue-code {
     color: var(--color-text-subtle);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .what-is-hub-section {
+      padding: 120px 80px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .what-is-hub-section {
+      padding: 48px 16px;
+    }
   }
 </style>

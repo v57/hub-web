@@ -33,6 +33,8 @@
 <style>
   .hero-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     min-height: 100svh;
     flex-shrink: 0;
     display: flex;
@@ -205,6 +207,27 @@
   }
 
   @media (max-width: 767px) {
+    .container2 {
+      left: 0;
+      right: 0;
+      padding: 0 16px 48px;
+      justify-content: center;
+    }
+
+    .available-on {
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .platforms {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
     .logo {
       font-size: 160px;
     }

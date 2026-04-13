@@ -58,7 +58,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 16px 112px 0;
+    padding: 16px 80px 0;
     box-sizing: border-box;
     display: flex;
     align-items: center;

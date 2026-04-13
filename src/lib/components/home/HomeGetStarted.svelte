@@ -161,6 +161,8 @@
 <style>
   .get-started-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     background-color: var(--color-surface-muted);
     display: flex;
     flex-direction: column;
@@ -373,6 +375,22 @@
     color: var(--color-text-muted);
     line-height: 1.4;
     text-align: center;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .get-started-section {
+      padding: 64px 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .get-started-section {
+      padding: 48px 16px;
+    }
+
+    .section-container {
+      gap: 32px;
+    }
   }
 
   @keyframes copy-pop {

@@ -22,4 +22,10 @@
     gap: 24px;
     font-size: 16px;
   }
+
+  @media (max-width: 767px) {
+    .how-built-information {
+      gap: 16px;
+    }
+  }
 </style>

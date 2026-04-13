@@ -73,4 +73,12 @@
     font-weight: 600;
     color: var(--color-text-muted);
   }
+
+  @media (max-width: 767px) {
+    .community-links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
 </style>

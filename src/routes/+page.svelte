@@ -53,6 +53,8 @@
 <style>
   .home {
     width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
     position: relative;
     background-color: var(--color-page);
     overflow-y: auto;
@@ -67,6 +69,8 @@
 
   .keep-exploring-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,6 +102,8 @@
 
   .how-it-built-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     background-color: var(--color-surface-muted);
     display: flex;
     flex-direction: column;
@@ -108,6 +114,8 @@
 
   .join-our-community-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,5 +129,45 @@
 
   .hub {
     color: var(--color-accent);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .keep-exploring-section {
+      padding: 64px 80px;
+    }
+
+    .how-it-built-section {
+      padding: 64px 80px;
+    }
+
+    .join-our-community-section {
+      padding: 64px 80px 80px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .keep-exploring-section {
+      padding: 48px 16px;
+    }
+
+    .how-it-built-section {
+      padding: 48px 16px;
+    }
+
+    .keep-exploring-section .exploration-container {
+      gap: 32px;
+    }
+
+    .how-it-built-section .exploration-container {
+      gap: 32px;
+    }
+
+    .join-our-community-section {
+      padding: 48px 16px 80px;
+    }
+
+    .join-our-community-section .section-container {
+      gap: 32px;
+    }
   }
 </style>

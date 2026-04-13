@@ -31,14 +31,16 @@
 <style>
   .cardfeature {
     width: 242px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 8px;
   }
 
   .cardfeature2 {
-    height: 244px;
+    height: 100%;
     width: 242px;
     display: flex;
     flex-direction: column;
@@ -230,5 +232,67 @@
     align-items: center;
     justify-content: center;
     padding: 4px 8px;
+  }
+
+  .cardfeature2 .container3 {
+    flex: 1;
+  }
+
+  @media (max-width: 767px) {
+    .cardfeature,
+    .cardfeature2 {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 12px;
+      row-gap: 8px;
+      align-items: start;
+      justify-items: stretch;
+    }
+
+    .container3 {
+      display: contents;
+    }
+
+    .title7 {
+      display: contents;
+    }
+
+    .iconframe,
+    .iconframe2 {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      align-self: start;
+    }
+
+    .feature-title {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: start;
+      height: auto;
+    }
+
+    .info {
+      grid-column: 2;
+      grid-row: 2;
+      gap: 0;
+      min-width: 0;
+    }
+
+    .tags4,
+    .tags5 {
+      grid-column: 2;
+      grid-row: 3;
+      align-self: start;
+      justify-self: start;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .section-description2 {
+      text-align: left;
+    }
   }
 </style>
