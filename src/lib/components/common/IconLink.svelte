@@ -34,6 +34,17 @@
     align-items: center;
     gap: var(--icon-gap);
     cursor: pointer;
+    text-decoration: none;
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 180ms ease;
+    will-change: transform, filter;
+  }
+
+  .icon-link:hover,
+  .icon-link:focus-visible {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 10px 20px rgb(var(--color-shadow-rgb) / 0.08));
   }
 
   .icon-link.vertical {
@@ -52,6 +63,16 @@
     border-radius: var(--icon-radius);
     overflow: hidden;
     box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms ease;
+    will-change: transform, box-shadow;
+  }
+
+  .icon-link:hover .icon-link-tile,
+  .icon-link:focus-visible .icon-link-tile {
+    transform: scale(1.03);
+    box-shadow: 0 8px 22px rgb(var(--color-shadow-rgb) / 0.14);
   }
 
   .icon-link-tile img {
@@ -61,5 +82,11 @@
     height: 100%;
     display: block;
     object-fit: cover;
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .icon-link:hover .icon-link-tile img,
+  .icon-link:focus-visible .icon-link-tile img {
+    transform: scale(1.06);
   }
 </style>

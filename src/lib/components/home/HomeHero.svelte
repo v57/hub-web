@@ -82,6 +82,23 @@
     min-height: 32px;
     font-size: 16px;
     color: var(--color-accent-contrast);
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms ease,
+      background-color 180ms ease;
+    will-change: transform, box-shadow, background-color;
+    cursor: pointer;
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 8px 20px rgb(var(--color-accent-rgb) / 0.22);
+  }
+
+  .button:hover .logo-text,
+  .button:focus-visible .logo-text {
+    animation: button-pop 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .container2 {
@@ -233,6 +250,18 @@
 
     .logo {
       font-size: 160px;
+    }
+  }
+
+  @keyframes button-pop {
+    0% {
+      transform: scale(0.98);
+    }
+    60% {
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
     }
   }
 </style>
