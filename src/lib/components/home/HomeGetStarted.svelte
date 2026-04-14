@@ -307,10 +307,29 @@
     color: var(--color-text-muted);
     border-radius: 200px;
     padding: 4px 8px;
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 180ms ease,
+      color 180ms ease,
+      box-shadow 180ms ease;
+    will-change: transform, background-color, color, box-shadow;
   }
 
   .chip.selected {
     color: var(--color-accent-contrast);
+  }
+
+  .chip:hover:not(.selected),
+  .chip:focus-visible:not(.selected) {
+    background-color: var(--color-surface-accent-soft);
+    color: var(--color-accent);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 12px rgb(var(--color-shadow-rgb) / 0.08);
+  }
+
+  .chip:hover:not(.selected) .platform-name,
+  .chip:focus-visible:not(.selected) .platform-name {
+    animation: chip-pop 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .instructions {
@@ -508,6 +527,18 @@
     }
     72% {
       transform: scale(0.98);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes chip-pop {
+    0% {
+      transform: scale(0.98);
+    }
+    60% {
+      transform: scale(1.04);
     }
     100% {
       transform: scale(1);
