@@ -198,6 +198,10 @@
   }
 
   @media (max-width: 767px) {
+    .toolbar {
+      padding: 16px 16px 0;
+    }
+
     .toolbar__action--solid,
     .toolbar__action--outline {
       display: none;
