@@ -30,7 +30,7 @@
         </div>
         {#if pageName}
           <div class="toolbar__page-name">
-            <b>{pageName}</b>
+            <span class="toolbar__page-name-text">{pageName}</span>
           </div>
         {/if}
       </div>
@@ -152,6 +152,12 @@
     color: var(--color-text);
   }
 
+  .toolbar__page-name-text {
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+  }
+
   .toolbar__actions {
     align-self: stretch;
     display: flex;
@@ -224,7 +230,7 @@
     position: relative;
     letter-spacing: -0.32px;
     line-height: 110%;
-    font-weight: 600;
+    font-weight: 600 !important;
   }
 
   @media (max-width: 767px) {

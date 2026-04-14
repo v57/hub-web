@@ -1,7 +1,12 @@
 <svelte:head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+  />
 </svelte:head>
 
 <slot />
@@ -67,7 +72,7 @@
   :global(body) {
     margin: 0;
     line-height: normal;
-    font-family: ui-rounded, Rubik, sans-serif;
+    font-family: Rubik, ui-rounded, sans-serif;
     background: var(--color-page);
     color: var(--color-text);
   }
