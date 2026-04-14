@@ -61,7 +61,7 @@
 
   .price-card {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-end;
     gap: 40px;
     text-align: left;

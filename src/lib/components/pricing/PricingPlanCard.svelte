@@ -8,7 +8,7 @@
 <div class={plan.cardClass}>
   <div class={plan.topRowClass}>
     <div class="plan-name-parent">
-      <b class="plan-name">{plan.name}</b>
+      <span class="plan-name">{plan.name}</span>
       <PricingFeatureList items={plan.features} />
     </div>
     <div class="buttonget">
@@ -17,7 +17,7 @@
   </div>
   <div class="button-container">
     <div class={plan.ctaClass}>
-      <b class="plan-name">{plan.ctaLabel}</b>
+      <span class="plan-name">{plan.ctaLabel}</span>
     </div>
     <div class="support-text">{plan.supportText}</div>
   </div>
@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    align-self: stretch;
     padding: 16px;
   }
 
@@ -69,6 +70,7 @@
 
   .plan-name {
     position: relative;
+    font-weight: 500;
   }
 
   .buttonget {
@@ -118,7 +120,7 @@
     position: relative;
     font-size: 12px;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color-text-subtle);
     text-align: center;
   }
@@ -126,6 +128,6 @@
   .button-label {
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 400;
   }
 </style>
