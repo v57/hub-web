@@ -1,10 +1,33 @@
 <script lang="ts">
+  import { onMount, tick } from 'svelte';
   import type { SupportButton } from './content';
   import IconLink from '../common/IconLink.svelte';
 
   export let buttons: SupportButton[] = [];
   export let description: string;
   export let title: string;
+
+  let buttonsContainer: HTMLDivElement | null = null;
+  let supportButtonWidth: number | null = null;
+
+  const measureSupportButtons = () => {
+    if (!buttonsContainer) return;
+
+    const buttonElements = buttonsContainer.querySelectorAll<HTMLElement>('.support-button');
+    let maxWidth = 0;
+
+    buttonElements.forEach((button) => {
+      const width = Math.ceil(button.getBoundingClientRect().width);
+      if (width > maxWidth) maxWidth = width;
+    });
+
+    supportButtonWidth = maxWidth > 0 ? maxWidth : null;
+  };
+
+  onMount(async () => {
+    await tick();
+    measureSupportButtons();
+  });
 </script>
 
 <div class="support-section">
@@ -15,9 +38,14 @@
       </div>
       <div class="support-text3">{description}</div>
     </div>
-    <div class="support-buttons-container">
+    <div
+      bind:this={buttonsContainer}
+      class="support-buttons-container"
+      style={supportButtonWidth ? `--support-button-width:${supportButtonWidth}px;` : ''}
+    >
       {#each buttons as button}
         <IconLink
+          outerClass="support-button"
           href={button.href}
           imageSrc={button.src}
           imageClass={button.iconClass}
@@ -33,13 +61,13 @@
 
 <style>
   .support-section {
-    align-self: center;
+    align-self: stretch;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 80px 120px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 48px 80px 120px;
     box-sizing: border-box;
     z-index: 1;
     font-size: 16px;
@@ -47,11 +75,9 @@
 
   .support-section-container {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
-    align-self: stretch;
     width: 100%;
     gap: 24px;
     flex-shrink: 0;
@@ -80,27 +106,35 @@
     letter-spacing: -0.02em;
     color: var(--color-text-muted);
     text-align: left;
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    max-width: 460px;
     height: auto;
   }
 
   .plan-name-parent {
     display: flex;
-    flex: 0 1 300px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-    max-width: 300px;
+    flex: 0 0 auto;
+    max-width: 460px;
     min-width: 0;
   }
 
   .support-buttons-container {
     display: flex;
-    align-items: flex-start;
-    gap: 32px;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 24px;
     text-align: left;
     font-size: 12px;
+  }
+
+  .support-buttons-container :global(.icon-link) {
+    flex: 0 0 auto;
+    width: var(--support-button-width, auto);
   }
 
   .button-label {
@@ -109,33 +143,4 @@
     font-weight: 600;
   }
 
-  @media (min-width: 768px) {
-    .support-section {
-      padding-top: 48px;
-    }
-
-    .support-text3 {
-      max-width: 460px;
-    }
-
-    .plan-name-parent {
-      flex-basis: 460px;
-      max-width: 460px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .support-section-container {
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    .support-buttons-container {
-      width: 100%;
-      flex-basis: 100%;
-      flex-shrink: 1;
-      justify-content: flex-start;
-    }
-  }
 </style>
