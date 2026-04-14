@@ -33,8 +33,7 @@
 
 <style>
   .support-section {
-    align-self: stretch;
-    height: 246px;
+    align-self: center;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -51,7 +50,10 @@
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
-    gap: 0 40px;
+    justify-content: flex-start;
+    align-self: stretch;
+    width: 100%;
+    gap: 40px;
     flex-shrink: 0;
   }
 
@@ -64,9 +66,23 @@
   .support-text3 {
     position: relative;
     font-size: 14px;
+    line-height: 1.4;
     letter-spacing: -0.02em;
     color: var(--color-text-muted);
     text-align: left;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .plan-name-parent {
+    display: flex;
+    flex: 0 1 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 300px;
+    min-width: 0;
   }
 
   .support-buttons-container {
