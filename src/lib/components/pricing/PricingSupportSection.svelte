@@ -106,9 +106,10 @@
     letter-spacing: -0.02em;
     color: var(--color-text-muted);
     text-align: left;
-    width: auto;
-    max-width: 460px;
+    width: 100%;
+    max-width: none;
     height: auto;
+    align-self: stretch;
   }
 
   .plan-name-parent {
@@ -117,8 +118,10 @@
     align-items: flex-start;
     gap: 16px;
     flex: 0 0 auto;
-    max-width: 460px;
+    width: 100%;
+    max-width: none;
     min-width: 0;
+    align-self: stretch;
   }
 
   .support-buttons-container {
@@ -141,6 +144,24 @@
     position: relative;
     letter-spacing: -0.32px;
     font-weight: 600;
+  }
+
+  @media (max-width: 767px) {
+    .support-section {
+      padding: 32px 16px 120px;
+    }
+
+    .support-section-container {
+      gap: 16px;
+    }
+
+    .plan-name-parent {
+      gap: 12px;
+    }
+
+    .support-buttons-container {
+      gap: 8px;
+    }
   }
 
 </style>

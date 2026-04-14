@@ -68,4 +68,19 @@
     font-size: 16px;
     color: var(--color-accent);
   }
+
+  @media (max-width: 767px) {
+    .pricing-section {
+      padding: 96px 16px 0;
+      gap: 24px;
+    }
+
+    .price-card {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 16px;
+    }
+  }
 </style>
