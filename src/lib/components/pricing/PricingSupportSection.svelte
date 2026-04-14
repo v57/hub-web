@@ -53,7 +53,7 @@
     justify-content: flex-start;
     align-self: stretch;
     width: 100%;
-    gap: 40px;
+    gap: 24px;
     flex-shrink: 0;
   }
 
@@ -61,6 +61,16 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .plan-name {
+    position: relative;
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--color-text);
   }
 
   .support-text3 {
@@ -97,5 +107,35 @@
     position: relative;
     letter-spacing: -0.32px;
     font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    .support-section {
+      padding-top: 48px;
+    }
+
+    .support-text3 {
+      max-width: 460px;
+    }
+
+    .plan-name-parent {
+      flex-basis: 460px;
+      max-width: 460px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .support-section-container {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .support-buttons-container {
+      width: 100%;
+      flex-basis: 100%;
+      flex-shrink: 1;
+      justify-content: flex-start;
+    }
   }
 </style>
