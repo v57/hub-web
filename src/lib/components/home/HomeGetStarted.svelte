@@ -9,6 +9,10 @@
   let selectedInstructions: HomeGetStartedPlatform = getStartedPlatforms[0];
   let pickerElement: HTMLDivElement | null = null;
   let pickerButtons: HTMLButtonElement[] = [];
+  let measurementRoot: HTMLDivElement | null = null;
+  let measurementStacks: Array<HTMLDivElement | null> = [];
+  let instructionsHeight: number | null = null;
+  let stepTerminalWidth: number | null = null;
   let capsuleLeft = 0;
   let capsuleWidth = 0;
   let copiedStepId: string | null = null;
@@ -31,6 +35,28 @@
 
     capsuleLeft = button.offsetLeft;
     capsuleWidth = button.offsetWidth;
+  }
+
+  function updateInstructionsHeight() {
+    const nextHeight = measurementStacks.reduce((maxHeight, element) => {
+      return element ? Math.max(maxHeight, element.offsetHeight) : maxHeight;
+    }, 0);
+
+    instructionsHeight = nextHeight;
+  }
+
+  function updateStepTerminalWidth() {
+    if (!measurementRoot) {
+      stepTerminalWidth = null;
+      return;
+    }
+
+    const terminals = Array.from(
+      measurementRoot.querySelectorAll<HTMLElement>('.measurement-step-terminal')
+    );
+    const nextWidth = terminals.reduce((maxWidth, element) => Math.max(maxWidth, element.offsetWidth), 0);
+
+    stepTerminalWidth = nextWidth;
   }
 
   async function copyCommand(command: string, stepId: string) {
@@ -73,9 +99,20 @@
 
     const resizeObserver = new ResizeObserver(() => {
       updateCapsule();
+      updateInstructionsHeight();
+      updateStepTerminalWidth();
     });
 
     resizeObserver.observe(pickerElement);
+
+    if (measurementRoot) {
+      resizeObserver.observe(measurementRoot);
+    }
+
+    updateInstructionsHeight();
+    updateStepTerminalWidth();
+    requestAnimationFrame(updateInstructionsHeight);
+    requestAnimationFrame(updateStepTerminalWidth);
 
     return () => {
       resizeObserver.disconnect();
@@ -116,7 +153,11 @@
           </button>
         {/each}
       </div>
-      <div class="instructions">
+      <div
+        class="instructions"
+        style:--instructions-height={instructionsHeight === null ? null : `${instructionsHeight}px`}
+        style:--step-terminal-width={stepTerminalWidth === null ? null : `${stepTerminalWidth}px`}
+      >
         {#key selectedPlatform}
           <div class="instruction-stack" transition:fly={{ duration: 180, y: 10, opacity: 0 }}>
             {#each selectedInstructions.steps as step}
@@ -153,6 +194,32 @@
             {/if}
           </div>
         {/key}
+      </div>
+      <div class="instructions-measure" aria-hidden="true" bind:this={measurementRoot}>
+        {#each getStartedPlatforms as platform, index}
+          <div class="instruction-stack measurement-stack" bind:this={measurementStacks[index]}>
+            {#each platform.steps as step}
+              <div class="step-container">
+                <div class="platform-name">{step.title}</div>
+                <div class="step-terminal measurement-step-terminal">
+                  <div class="title-container">
+                    <div class="icon-container">
+                      <img class="frame-icon" src="/files/ui/terminal.svg" alt="" />
+                      <div class="platform-name copied-label">{step.terminal}</div>
+                    </div>
+                    <pre class="command-text"><code>{step.command}</code></pre>
+                  </div>
+                  <button type="button" class="buttonicon" tabindex="-1" aria-hidden="true">
+                    <img class="icon" src="/files/ui/copy.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            {/each}
+            {#if platform.description}
+              <p class="platform-description">{platform.description}</p>
+            {/if}
+          </div>
+        {/each}
       </div>
     </div>
   </div>
@@ -251,7 +318,26 @@
     justify-items: center;
     align-items: start;
     width: fit-content;
-    min-height: 176px;
+    min-height: var(--instructions-height, 176px);
+    position: relative;
+  }
+
+  .instructions-measure {
+    position: absolute;
+    inset: 0 auto auto 0;
+    visibility: hidden;
+    pointer-events: none;
+    width: fit-content;
+    z-index: -1;
+    overflow: hidden;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+  }
+
+  .instructions-measure .step-terminal {
+    width: fit-content;
+    max-width: none;
   }
 
   .instruction-stack {
@@ -281,7 +367,8 @@
     padding: 12px 16px;
     gap: 20px;
     color: var(--color-accent);
-    width: fit-content;
+    width: var(--step-terminal-width, fit-content);
+    max-width: 100%;
   }
 
   .title-container {
@@ -339,6 +426,10 @@
     cursor: pointer;
   }
 
+  .buttonicon:hover {
+    background-color: var(--color-surface-accent-soft);
+  }
+
   .buttonicon.copied {
     background-color: var(--color-accent);
     transform: scale(1.08);
@@ -377,6 +468,9 @@
     text-align: center;
   }
 
+  .measurement-stack {
+    grid-area: auto;
+  }
   @media (min-width: 768px) and (max-width: 1023px) {
     .get-started-section {
       padding: 64px 0;
