@@ -11,13 +11,17 @@
     <div class="search">
       <div class="container">
         <div class="icon-and-prompt">
-          <img class="group-icon" src="/files/ui/copy.svg" alt="" />
+          <img class="group-icon" src="/Button/search.svg" alt="" />
           <div class="prompt-text">{promptText}</div>
         </div>
       </div>
     </div>
     <div class="buttonicon">
-      <img class="group-icon2" src="/files/ui/add.svg" alt="" />
+      <div class="buttonicon-group">
+        <div class="buttonicon-art">
+          <img class="group-icon2" src="/Button/plus.svg" alt="" />
+        </div>
+      </div>
     </div>
   </div>
 
@@ -86,13 +90,25 @@
     position: relative;
   }
 
-  .group-icon2 {
+  .buttonicon-group {
     position: absolute;
-    top: calc(50% - 18px);
-    left: calc(50% - 18px);
-    filter: drop-shadow(0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1));
+    left: 50%;
+    top: 50%;
     width: 36px;
     height: 36px;
+    transform: translate(-50%, -50%);
+  }
+
+  .buttonicon-art {
+    position: absolute;
+    inset: -28.33% -32.49% -39.37% -33.89%;
+  }
+
+  .group-icon2 {
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
   }
 
   .tags {
