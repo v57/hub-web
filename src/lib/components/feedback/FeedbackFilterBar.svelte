@@ -115,12 +115,6 @@
       gap: 12px;
     }
 
-    .filtersearch {
-      width: 100%;
-      max-width: none;
-      flex: 1 1 auto;
-    }
-
     .sort-options {
       gap: 3px;
     }

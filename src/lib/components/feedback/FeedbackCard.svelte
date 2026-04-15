@@ -25,9 +25,11 @@
       <div class="description">{card.description}</div>
       <div class="date-and-tags">
         <div class="date">{card.date}</div>
-        {#each card.tags as tag}
-          <FeedbackTag {...tag} />
-        {/each}
+        <div class="tags">
+          {#each card.tags as tag}
+            <FeedbackTag {...tag} />
+          {/each}
+        </div>
       </div>
     </div>
 
@@ -160,6 +162,13 @@
     color: var(--color-accent);
   }
 
+  .tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
   .date {
     position: relative;
     letter-spacing: -0.32px;
@@ -196,26 +205,56 @@
   @media (max-width: 767px) {
     .cardfeedback {
       width: 100%;
-      gap: 12px;
+      box-sizing: border-box;
+      gap: 8px;
     }
 
     .sortfilter {
-      gap: 16px;
+      gap: 12px;
     }
 
     .content2,
     .content4 {
       width: 100%;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "description description"
+        "tags tags"
+        "date aside";
+      column-gap: 16px;
+      row-gap: 0;
+      align-items: end;
     }
 
     .content3 {
+      display: contents;
+    }
+
+    .description {
+      grid-area: description;
       min-width: 0;
     }
 
     .date-and-tags {
-      flex-wrap: wrap;
-      row-gap: 4px;
+      display: contents;
+    }
+
+    .tags {
+      grid-area: tags;
+      min-width: 0;
+      margin-top: 8px;
+    }
+
+    .date {
+      grid-area: date;
+      align-self: end;
+    }
+
+    .card-aside {
+      grid-area: aside;
+      width: auto;
+      align-self: end;
     }
   }
 </style>
