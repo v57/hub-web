@@ -235,7 +235,11 @@
 
   @media (max-width: 767px) {
     .toolbar {
-      padding: 16px 20px 0;
+      padding: 16px 24px 0;
+    }
+
+    .toolbar__shell {
+      min-height: 48px;
     }
 
     .toolbar__action--solid,

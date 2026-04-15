@@ -192,4 +192,30 @@
     height: 100%;
     object-fit: contain;
   }
+
+  @media (max-width: 767px) {
+    .cardfeedback {
+      width: 100%;
+      gap: 12px;
+    }
+
+    .sortfilter {
+      gap: 16px;
+    }
+
+    .content2,
+    .content4 {
+      width: 100%;
+      gap: 16px;
+    }
+
+    .content3 {
+      min-width: 0;
+    }
+
+    .date-and-tags {
+      flex-wrap: wrap;
+      row-gap: 4px;
+    }
+  }
 </style>

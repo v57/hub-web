@@ -75,4 +75,20 @@
     letter-spacing: -0.32px;
     font-weight: 600;
   }
+
+  @media (max-width: 767px) {
+    .feedback-section {
+      padding: 80px 16px 80px;
+    }
+
+    .content {
+      width: 100%;
+      gap: 32px;
+    }
+
+    .cards-section {
+      width: 100%;
+      align-items: stretch;
+    }
+  }
 </style>

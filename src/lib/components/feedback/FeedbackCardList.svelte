@@ -20,4 +20,11 @@
     font-size: 16px;
     color: var(--color-text);
   }
+
+  @media (max-width: 767px) {
+    .cards {
+      width: 100%;
+      align-items: stretch;
+    }
+  }
 </style>

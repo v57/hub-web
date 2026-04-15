@@ -107,4 +107,15 @@
     font-size: 12px;
     color: var(--color-accent);
   }
+
+  @media (max-width: 767px) {
+    .tags {
+      width: 100%;
+      gap: 8px;
+    }
+
+    .searchadd {
+      gap: 12px;
+    }
+  }
 </style>
