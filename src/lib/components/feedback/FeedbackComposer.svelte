@@ -17,11 +17,7 @@
       </div>
     </div>
     <div class="buttonicon">
-      <div class="buttonicon-group">
-        <div class="buttonicon-art">
-          <img class="group-icon2" src="/Button/plus.svg" alt="" />
-        </div>
-      </div>
+      <img class="group-icon2" src="/Button/plus.svg" alt="" />
     </div>
   </div>
 
@@ -88,27 +84,15 @@
     height: 36px;
     width: 36px;
     position: relative;
-  }
-
-  .buttonicon-group {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 36px;
-    height: 36px;
-    transform: translate(-50%, -50%);
-  }
-
-  .buttonicon-art {
-    position: absolute;
-    inset: -28.33% -32.49% -39.37% -33.89%;
+    border-radius: 9999px;
+    box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
   }
 
   .group-icon2 {
     display: block;
-    max-width: none;
     width: 100%;
     height: 100%;
+    object-fit: contain;
   }
 
   .tags {

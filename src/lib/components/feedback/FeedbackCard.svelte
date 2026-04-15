@@ -34,11 +34,7 @@
     <div class="card-aside">
       <b class="platform-description">{voteCount}</b>
       <div class="buttonicon2">
-        <div class="buttonicon2-group">
-          <div class="buttonicon2-art">
-            <img class="group-icon3" src="/Button/like.svg" alt="" />
-          </div>
-        </div>
+        <img class="group-icon3" src="/Button/like.svg" alt="" />
       </div>
     </div>
   </div>
@@ -186,26 +182,14 @@
     height: 24px;
     width: 26px;
     position: relative;
-  }
-
-  .buttonicon2-group {
-    position: absolute;
-    left: calc(50% + 0.26px);
-    top: calc(50% + 0.24px);
-    width: 25.961px;
-    height: 24px;
-    transform: translate(-50%, -50%);
-  }
-
-  .buttonicon2-art {
-    position: absolute;
-    inset: -42.5% -46.99% -59.17% -46.99%;
+    border-radius: 9999px;
+    box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
   }
 
   .group-icon3 {
     display: block;
-    max-width: none;
     width: 100%;
     height: 100%;
+    object-fit: contain;
   }
 </style>
