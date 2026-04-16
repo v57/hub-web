@@ -161,8 +161,11 @@
 
   @media (max-width: 767px) {
     .tags {
+      width: 100%;
+      align-self: stretch;
+      justify-content: center;
+      align-content: center;
       gap: 8px;
-      align-content: stretch;
     }
 
     .searchadd {
