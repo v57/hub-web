@@ -188,17 +188,22 @@
   }
 
   .buttonicon2 {
+    width: 24px;
     height: 24px;
-    width: 26px;
     position: relative;
-    border-radius: 9999px;
-    box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    flex: none;
   }
 
   .group-icon3 {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
   }
 
