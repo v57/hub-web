@@ -7,17 +7,27 @@
   export let sortPrimary = 'new';
   export let sortSecondary = 'best';
 
-  const dispatch = createEventDispatcher<{ select: string }>();
+  const dispatch = createEventDispatcher<{ select: string; sort: string }>();
 
   let activeFilter = filters.find((filter) => filter.active)?.label ?? filters[0]?.label ?? 'All';
+  let activeSort = sortPrimary;
 
   $: if (filters.length && !filters.some((filter) => filter.label === activeFilter)) {
     activeFilter = filters.find((filter) => filter.active)?.label ?? filters[0]?.label ?? 'All';
   }
 
+  $: if (activeSort !== sortPrimary && activeSort !== sortSecondary) {
+    activeSort = sortPrimary;
+  }
+
   function selectFilter(label: string) {
     activeFilter = label;
     dispatch('select', label);
+  }
+
+  function selectSort(label: string) {
+    activeSort = label;
+    dispatch('sort', label);
   }
 </script>
 
@@ -39,9 +49,25 @@
 
   <div class="sort-options">
     <div class="button-label">{sortLabel}</div>
-    <div class="button-label12">{sortPrimary}</div>
+    <button
+      type="button"
+      class="button-label sort-option sort-button"
+      class:sort-active={activeSort === sortPrimary}
+      aria-pressed={activeSort === sortPrimary}
+      on:click={() => selectSort(sortPrimary)}
+    >
+      {sortPrimary}
+    </button>
     <div class="button-label">|</div>
-    <div class="sort-option">{sortSecondary}</div>
+    <button
+      type="button"
+      class="button-label sort-option sort-button"
+      class:sort-active={activeSort === sortSecondary}
+      aria-pressed={activeSort === sortSecondary}
+      on:click={() => selectSort(sortSecondary)}
+    >
+      {sortSecondary}
+    </button>
   </div>
 </div>
 
@@ -149,18 +175,34 @@
     display: block;
   }
 
-  .button-label12 {
-    position: relative;
-    letter-spacing: -0.32px;
-    font-weight: 600;
-    color: var(--color-accent);
-  }
-
   .sort-option {
     position: relative;
     letter-spacing: -0.32px;
     font-weight: 600;
     color: var(--color-text-muted);
+  }
+
+  .sort-button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .sort-button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 9999px;
+  }
+
+  .sort-button:hover {
+    color: var(--color-accent);
+  }
+
+  .sort-active {
+    color: var(--color-accent);
   }
 
   @media (max-width: 767px) {

@@ -5,6 +5,7 @@
   export let className: FeedbackTagData['className'];
   export let label: string;
   export let selected = false;
+  export let interactive = true;
 
   const dispatch = createEventDispatcher<{
     clear: void;
@@ -21,26 +22,32 @@
   }
 </script>
 
-<button
-  type="button"
-  class={className}
-  class:selected
-  aria-pressed={selected}
-  on:click={handleClick}
->
-  <div class="button-label">{label}</div>
-  {#if selected}
-    <svg class="clear-icon" viewBox="0 0 12 12" aria-hidden="true">
-      <path
-        d="M2 2l8 8M10 2L2 10"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-      />
-    </svg>
-  {/if}
-</button>
+{#if interactive}
+  <button
+    type="button"
+    class={className}
+    class:selected
+    aria-pressed={selected}
+    on:click={handleClick}
+  >
+    <div class="button-label">{label}</div>
+    {#if selected}
+      <svg class="clear-icon" viewBox="0 0 12 12" aria-hidden="true">
+        <path
+          d="M2 2l8 8M10 2L2 10"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+        />
+      </svg>
+    {/if}
+  </button>
+{:else}
+  <span class={`${className} static-tag`}>
+    <span class="button-label">{label}</span>
+  </span>
+{/if}
 
 <style>
   .button,
@@ -136,6 +143,21 @@
   .button13:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+  }
+
+  .static-tag {
+    pointer-events: none;
+    cursor: default;
+    transition: none;
+    transform: none;
+    box-shadow: none;
+    will-change: auto;
+  }
+
+  .static-tag:hover,
+  .static-tag:focus-visible {
+    transform: none;
+    box-shadow: none;
   }
 
   .selected {

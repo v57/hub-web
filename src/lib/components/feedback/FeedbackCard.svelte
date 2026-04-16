@@ -5,6 +5,26 @@
   export let card: FeedbackCardData;
   export let href = 'https://github.com/v57';
   export let voteCount = 95;
+
+  let liked = false;
+  let likePulse = false;
+  let pulseTimer: ReturnType<typeof setTimeout> | undefined;
+
+  function toggleLike() {
+    liked = !liked;
+    likePulse = false;
+
+    if (pulseTimer) {
+      clearTimeout(pulseTimer);
+    }
+
+    requestAnimationFrame(() => {
+      likePulse = true;
+      pulseTimer = setTimeout(() => {
+        likePulse = false;
+      }, 220);
+    });
+  }
 </script>
 
 <a class="cardfeedback" href={href} target="_blank" rel="noreferrer">
@@ -27,7 +47,7 @@
         <div class="date">{card.date}</div>
         <div class="tags">
           {#each card.tags as tag}
-            <FeedbackTag {...tag} />
+            <FeedbackTag {...tag} interactive={false} />
           {/each}
         </div>
       </div>
@@ -35,9 +55,26 @@
 
     <div class="card-aside">
       <b class="platform-description">{voteCount}</b>
-      <div class="buttonicon2">
-        <img class="group-icon3" src="/Button/like.svg" alt="" />
-      </div>
+      <button
+        type="button"
+        class="buttonicon2"
+        class:liked
+        class:like-pulse={likePulse}
+        aria-pressed={liked}
+        aria-label={liked ? 'Unlike feedback' : 'Like feedback'}
+        on:click|preventDefault|stopPropagation={toggleLike}
+    >
+        <svg class="group-icon3" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.44.81 4.5 2.09C13.06 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"
+            fill={liked ? 'currentColor' : 'none'}
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </a>
@@ -194,10 +231,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0;
+    border-radius: 9999px;
+    border: 0;
     background-color: transparent;
     box-shadow: none;
     flex: none;
+    padding: 0;
+    appearance: none;
+    cursor: pointer;
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 180ms ease,
+      box-shadow 180ms ease,
+      filter 180ms ease;
+    will-change: transform, background-color, box-shadow, filter;
+    color: var(--color-accent);
+  }
+
+  .buttonicon2:hover,
+  .buttonicon2:focus-visible {
+    transform: translateY(-2px) scale(1.08);
+    background-color: rgb(var(--color-accent-rgb) / 0.08);
+    box-shadow: 0 8px 18px rgb(var(--color-shadow-rgb) / 0.1);
+  }
+
+  .buttonicon2:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 
   .group-icon3 {
@@ -205,6 +265,22 @@
     width: 24px;
     height: 24px;
     object-fit: contain;
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 180ms ease;
+  }
+
+  .liked {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .liked .group-icon3 {
+    transform: scale(1.08);
+  }
+
+  .like-pulse {
+    animation: like-pop 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   @media (max-width: 767px) {
@@ -260,6 +336,20 @@
       grid-area: aside;
       width: auto;
       align-self: end;
+    }
+  }
+
+  @keyframes like-pop {
+    0% {
+      transform: scale(1);
+    }
+
+    45% {
+      transform: scale(1.18);
+    }
+
+    100% {
+      transform: scale(1);
     }
   }
 </style>
