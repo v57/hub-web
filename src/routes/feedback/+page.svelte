@@ -54,18 +54,16 @@
   }
 
   .content {
-    width: min(100%, 760px);
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 40px;
   }
 
   .cards-section {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 16px;
     text-align: left;
     font-size: 12px;
@@ -84,13 +82,7 @@
     }
 
     .content {
-      width: 100%;
       gap: 32px;
-    }
-
-    .cards-section {
-      width: 100%;
-      align-items: stretch;
     }
   }
 </style>

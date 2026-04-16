@@ -114,6 +114,19 @@
     position: relative;
     border-radius: 9999px;
     box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
+    cursor: pointer;
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms ease,
+      filter 180ms ease;
+    will-change: transform, box-shadow, filter;
+  }
+
+  .buttonicon:hover,
+  .buttonicon:focus-visible {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 22px rgb(var(--color-shadow-rgb) / 0.16);
+    filter: brightness(1.02);
   }
 
   .group-icon2 {
@@ -121,10 +134,19 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
+  }
+
+  .buttonicon:hover .group-icon2,
+  .buttonicon:focus-visible .group-icon2 {
+    transform: rotate(90deg);
   }
 
   .tags {
-    width: 100%;
+    width: 588px;
+    max-width: 100%;
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
