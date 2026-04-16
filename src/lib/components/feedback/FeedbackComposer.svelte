@@ -4,6 +4,27 @@
 
   export let promptText: string;
   export let tags: FeedbackTagData[] = [];
+
+  let selectedTags: string[] = [];
+
+  function selectTag(label: string) {
+    if (selectedTags.includes(label)) {
+      return;
+    }
+
+    selectedTags = [...selectedTags, label];
+  }
+
+  function clearTag(label: string) {
+    selectedTags = selectedTags.filter((tag) => tag !== label);
+  }
+
+  $: orderedTags = [
+    ...selectedTags
+      .map((label) => tags.find((tag) => tag.label === label))
+      .filter((tag): tag is FeedbackTagData => Boolean(tag)),
+    ...tags.filter((tag) => !selectedTags.includes(tag.label))
+  ];
 </script>
 
 <div class="search-section">
@@ -22,8 +43,13 @@
   </div>
 
   <div class="tags">
-    {#each tags as tag}
-      <FeedbackTag {...tag} />
+    {#each orderedTags as tag}
+      <FeedbackTag
+        {...tag}
+        selected={selectedTags.includes(tag.label)}
+        on:select={(event) => selectTag(event.detail)}
+        on:clear={() => clearTag(tag.label)}
+      />
     {/each}
   </div>
 </div>
@@ -31,9 +57,10 @@
 <style>
   .search-section {
     align-self: stretch;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 12px;
   }
 
@@ -46,6 +73,7 @@
 
   .search {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -96,13 +124,14 @@
   }
 
   .tags {
-    width: 378px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     align-content: center;
     gap: 12px;
+    min-width: 0;
     text-align: left;
     font-size: 12px;
     color: var(--color-accent);
@@ -110,12 +139,13 @@
 
   @media (max-width: 767px) {
     .tags {
-      width: 100%;
       gap: 8px;
+      align-content: stretch;
     }
 
     .searchadd {
       gap: 12px;
+      align-items: stretch;
     }
   }
 </style>

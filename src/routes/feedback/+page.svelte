@@ -54,16 +54,18 @@
   }
 
   .content {
+    width: min(100%, 760px);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 40px;
   }
 
   .cards-section {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 16px;
     text-align: left;
     font-size: 12px;
