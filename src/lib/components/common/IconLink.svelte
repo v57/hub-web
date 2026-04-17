@@ -89,4 +89,11 @@
   .icon-link:focus-visible .icon-link-tile img {
     transform: scale(1.06);
   }
+
+  .icon-link-tile img.reddit-icon {
+    inset: 16%;
+    width: 68%;
+    height: 68%;
+    object-fit: contain;
+  }
 </style>

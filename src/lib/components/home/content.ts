@@ -234,8 +234,8 @@ export const communityLinks: HomeCommunityLink[] = [
   },
   {
     outerClass: 'link2',
-    imageSrc: '/files/apps/reddit.svg',
-    imageClass: 'vector-icon6',
+    imageSrc: '/files/apps/reddit-svgrepo-com.svg',
+    imageClass: 'vector-icon6 reddit-icon',
     title: 'Reddit',
     description: '@v57/hub · Discussions & feedback'
   },
