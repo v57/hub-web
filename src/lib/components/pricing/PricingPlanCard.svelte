@@ -135,6 +135,20 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    .pricing-plan-card {
+      border-color: var(--color-border);
+      box-shadow:
+        0 6px 18px rgb(0 0 0 / 0.16),
+        0 16px 32px rgb(0 0 0 / 0.22);
+    }
+
+    .pricing-plan-card:hover,
+    .pricing-plan-card:focus-within {
+      box-shadow:
+        0 10px 24px rgb(0 0 0 / 0.2),
+        0 22px 42px rgb(0 0 0 / 0.28);
+    }
+
     .button-container {
       color: rgb(255 245 246 / 0.92);
     }

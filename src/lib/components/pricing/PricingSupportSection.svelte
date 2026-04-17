@@ -142,12 +142,16 @@
 
   @media (prefers-color-scheme: dark) {
     .support-buttons-container :global(.icon-link-tile) {
-      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+      box-shadow:
+        inset 0 0 0 1px var(--color-border),
+        0px 4px 20px rgb(0 0 0 / 0.24);
     }
 
     .support-buttons-container :global(.icon-link:hover .icon-link-tile),
     .support-buttons-container :global(.icon-link:focus-visible .icon-link-tile) {
-      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+      box-shadow:
+        inset 0 0 0 1px var(--color-border),
+        0px 8px 22px rgb(0 0 0 / 0.3);
     }
   }
 

@@ -239,6 +239,14 @@
     flex: 1;
   }
 
+  @media (prefers-color-scheme: dark) {
+    .iconframe,
+    .iconframe2 {
+      border-color: var(--color-border);
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.22);
+    }
+  }
+
   @media (max-width: 767px) {
     .cardfeature,
     .cardfeature2 {

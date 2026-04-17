@@ -119,11 +119,11 @@
     border: 0;
     background: transparent;
     padding: 0;
-    color: #000;
+    color: var(--color-text);
     font: inherit;
     letter-spacing: -0.02em;
     outline: none;
-    caret-color: #000;
+    caret-color: var(--color-text);
   }
 
   .prompt-input::placeholder {
@@ -133,6 +133,18 @@
 
   .prompt-input:focus::placeholder {
     opacity: 0.52;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .container {
+      border-color: var(--color-border);
+      box-shadow: 0 4px 20px rgb(0 0 0 / 0.16);
+    }
+
+    .prompt-input {
+      color: #a5a5a9;
+      caret-color: #a5a5a9;
+    }
   }
 
   .buttonicon {

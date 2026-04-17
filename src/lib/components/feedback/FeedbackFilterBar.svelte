@@ -229,4 +229,11 @@
       transform: scale(1);
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    .filtersearch {
+      border-color: var(--color-border);
+      box-shadow: 0 4px 20px rgb(0 0 0 / 0.16);
+    }
+  }
 </style>

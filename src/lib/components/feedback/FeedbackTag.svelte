@@ -179,4 +179,10 @@
     flex: none;
     display: block;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .static-tag.button13 {
+      background-color: #393733;
+    }
+  }
 </style>
