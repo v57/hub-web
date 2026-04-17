@@ -140,6 +140,17 @@
     width: var(--support-button-width, auto);
   }
 
+  @media (prefers-color-scheme: dark) {
+    .support-buttons-container :global(.icon-link-tile) {
+      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+    }
+
+    .support-buttons-container :global(.icon-link:hover .icon-link-tile),
+    .support-buttons-container :global(.icon-link:focus-visible .icon-link-tile) {
+      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+    }
+  }
+
   .button-label {
     position: relative;
     letter-spacing: -0.32px;
