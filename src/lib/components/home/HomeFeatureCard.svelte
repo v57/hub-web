@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 8px;
   }
 
   .title7 {
@@ -189,7 +189,7 @@
   .feature-title {
     align-self: stretch;
     position: relative;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .info {
@@ -294,6 +294,13 @@
 
     .section-description2 {
       text-align: left;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .cardfeature,
+    .cardfeature2 {
+      gap: 12px;
     }
   }
 </style>

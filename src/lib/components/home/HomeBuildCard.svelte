@@ -133,7 +133,7 @@
   }
 
   .feature-title {
-    font-weight: 700;
+    font-weight: 500;
   }
 
   @media (max-width: 767px) {

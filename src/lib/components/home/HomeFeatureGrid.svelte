@@ -22,7 +22,6 @@
     text-align: left;
     font-size: 16px;
     width: 100%;
-    max-width: calc((242px * 3) + (12px * 2));
     margin: 0 auto;
   }
 
@@ -38,7 +37,15 @@
   @media (min-width: 768px) and (max-width: 1023px) {
     .features-container {
       grid-template-columns: repeat(2, 242px);
-      max-width: calc((242px * 2) + 12px);
+      max-width: calc((242px * 2) + 24px);
+      gap: 24px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .features-container {
+      max-width: 800px;
+      gap: 24px;
     }
   }
 </style>

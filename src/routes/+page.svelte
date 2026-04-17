@@ -125,7 +125,7 @@
 
   .logo-text {
     position: relative;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .hub {

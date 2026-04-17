@@ -64,14 +64,14 @@
   .feature-title {
     align-self: stretch;
     position: relative;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .community-link-description {
     position: relative;
     font-size: 12px;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color-text-muted);
   }
 

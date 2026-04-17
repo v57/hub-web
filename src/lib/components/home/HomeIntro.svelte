@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 0;
     text-align: left;
   }
 
@@ -80,7 +80,7 @@
   }
 
   .logo-text {
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .section-description {
