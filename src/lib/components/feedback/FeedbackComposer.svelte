@@ -5,6 +5,7 @@
   export let promptText: string;
   export let tags: FeedbackTagData[] = [];
 
+  let query = '';
   let selectedTags: string[] = [];
 
   function selectTag(label: string) {
@@ -33,7 +34,15 @@
       <div class="container">
         <div class="icon-and-prompt">
           <img class="group-icon" src="/Button/search.svg" alt="" />
-          <div class="prompt-text">{promptText}</div>
+          <input
+            class="prompt-input"
+            bind:value={query}
+            type="text"
+            placeholder={promptText}
+            aria-label={promptText}
+            autocomplete="off"
+            spellcheck="false"
+          />
         </div>
       </div>
     </div>
@@ -95,6 +104,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    min-width: 0;
   }
 
   .group-icon {
@@ -103,9 +113,26 @@
     max-height: 100%;
   }
 
-  .prompt-text {
-    position: relative;
+  .prompt-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: #000;
+    font: inherit;
     letter-spacing: -0.02em;
+    outline: none;
+    caret-color: #000;
+  }
+
+  .prompt-input::placeholder {
+    color: inherit;
+    opacity: 0.72;
+  }
+
+  .prompt-input:focus::placeholder {
+    opacity: 0.52;
   }
 
   .buttonicon {
