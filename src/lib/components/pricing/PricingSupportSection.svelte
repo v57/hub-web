@@ -93,7 +93,7 @@
     position: relative;
     font-size: 16px;
     line-height: 1.1;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: var(--color-text);
@@ -143,7 +143,7 @@
   .button-label {
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   @media (max-width: 600px) {
