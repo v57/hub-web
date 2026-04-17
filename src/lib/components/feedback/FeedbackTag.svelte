@@ -170,7 +170,7 @@
   .button-label {
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .clear-icon {

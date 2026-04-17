@@ -57,7 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 32px;
   }
 
   .cards-section {
@@ -73,7 +73,7 @@
     align-self: stretch;
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   @media (max-width: 767px) {

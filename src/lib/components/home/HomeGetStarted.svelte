@@ -129,7 +129,7 @@
 <div class="get-started-section">
   <div class="section-container">
     <div class="title">
-      <b class="logo-text">Get started in seconds</b>
+      <span class="logo-text">Get started in seconds</span>
     </div>
     <div class="steps-container">
       <div class="filterplatform" bind:this={pickerElement} role="group" aria-label="Installation platform">
@@ -248,6 +248,10 @@
   .title {
     display: flex;
     align-items: center;
+  }
+
+  .logo-text {
+    font-weight: 700;
   }
 
   .steps-container {

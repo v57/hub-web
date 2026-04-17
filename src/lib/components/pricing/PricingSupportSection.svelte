@@ -34,7 +34,7 @@
   <div class="support-section-container">
     <div class="plan-name-parent">
       <div class="title2">
-        <b class="plan-name">{title}</b>
+        <span class="plan-name">{title}</span>
       </div>
       <div class="support-text3">{description}</div>
     </div>

@@ -15,7 +15,7 @@
         <img class={card.imageClass} src={card.src} alt="" />
       {/if}
     </div>
-    <b class="feature-title">{card.title}</b>
+    <span class="feature-title">{card.title}</span>
     <div class="description">{card.description}</div>
   </div>
 </div>
@@ -130,6 +130,10 @@
     font-size: 14px;
     letter-spacing: -0.02em;
     color: var(--color-text-muted);
+  }
+
+  .feature-title {
+    font-weight: 700;
   }
 
   @media (max-width: 767px) {

@@ -16,7 +16,7 @@
       size={60}
     >
       <div class="title-container">
-        <b class="feature-title">{link.title}</b>
+        <span class="feature-title">{link.title}</span>
         <div class="community-link-description">{link.description}</div>
       </div>
     </IconLink>
@@ -64,6 +64,7 @@
   .feature-title {
     align-self: stretch;
     position: relative;
+    font-weight: 700;
   }
 
   .community-link-description {

@@ -7,15 +7,15 @@
 <div class="hero-section">
   <div class="container">
     <div class="logo">
-      <b class="logo-text">HUB</b>
+      <span class="logo-text">HUB</span>
     </div>
     <div class="button">
-      <b class="logo-text">Download</b>
+      <span class="logo-text">Download</span>
     </div>
   </div>
   <div class="container2">
     <div class="available-on">
-      <b class="logo-text">Available on</b>
+      <span class="logo-text">Available on</span>
       <div class="platforms">
         {#each platforms as platform}
           <div class="platform">
@@ -67,6 +67,7 @@
 
   .logo-text {
     position: relative;
+    font-weight: 700;
   }
 
   .button {

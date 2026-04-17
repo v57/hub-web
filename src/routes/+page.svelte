@@ -17,10 +17,10 @@
   <HomeIntro />
   <div class="keep-exploring-section">
     <div class="exploration-container">
-      <b class="logo-text">
+      <span class="logo-text">
         <span>Keep exploring </span>
         <span class="hub">Hub</span>
-      </b>
+      </span>
       <HomeFeatureGrid cards={featureCards} />
     </div>
   </div>
@@ -28,11 +28,11 @@
   <div class="how-it-built-section">
     <div class="exploration-container">
       <div class="how-built-title-container">
-        <b class="logo-text">
+        <span class="logo-text">
           <span>How </span>
           <span class="hub">Hub</span>
           <span> works</span>
-        </b>
+        </span>
       </div>
       <HomeBuildGrid cards={buildCards} />
     </div>
@@ -41,7 +41,7 @@
   <div class="join-our-community-section">
     <div class="section-container">
       <div class="how-built-title-container">
-        <b class="logo-text">Join our community</b>
+        <span class="logo-text">Join our community</span>
       </div>
       <HomeCommunityGrid links={communityLinks} />
     </div>
@@ -125,6 +125,7 @@
 
   .logo-text {
     position: relative;
+    font-weight: 700;
   }
 
   .hub {

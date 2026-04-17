@@ -30,7 +30,7 @@
 <a class="cardfeedback" href={href} target="_blank" rel="noreferrer">
   <div class="sortfilter">
     <div class="text">
-      <b class="platform-description">{card.title}</b>
+      <span class="platform-description">{card.title}</span>
     </div>
     <div class={card.statusClass}>
       <div class="status-item">
@@ -54,7 +54,7 @@
     </div>
 
     <div class="card-aside">
-      <b class="platform-description">{voteCount}</b>
+      <span class="platform-description">{voteCount}</span>
       <button
         type="button"
         class="buttonicon2"
@@ -109,6 +109,7 @@
 
   .platform-description {
     position: relative;
+    font-weight: 500;
   }
 
   .status,
@@ -209,7 +210,7 @@
   .date {
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color-text-subtle);
   }
 

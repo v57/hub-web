@@ -4,14 +4,14 @@
       <div class="logo-icon">
         <img class="icon3" src="/files/icon/large.png" alt="" />
       </div>
-      <b class="logo-text">Hub</b>
+      <span class="logo-text">Hub</span>
     </div>
     <div class="title6">
-      <b class="logo-text">
+      <span class="logo-text">
         <span>Publish, connect, stream. All in one </span>
         <span class="hub">Hub</span>
         <span>.</span>
-      </b>
+      </span>
     </div>
     <div class="section-description">
       <span
@@ -77,6 +77,10 @@
 
   .hub {
     color: var(--color-accent);
+  }
+
+  .logo-text {
+    font-weight: 700;
   }
 
   .section-description {

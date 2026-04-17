@@ -173,12 +173,13 @@
 
   .platform-name {
     display: block;
+    font-weight: 500;
   }
 
   .sort-option {
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--color-text-muted);
   }
 

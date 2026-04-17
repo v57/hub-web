@@ -12,7 +12,7 @@
           <img class={card.imageClass} src={card.src} alt="" />
         </div>
       </div>
-      <b class="feature-title">{card.title}</b>
+      <span class="feature-title">{card.title}</span>
     </div>
     <div class="info">
       <div class="section-title2">{card.sectionTitle}</div>
@@ -189,6 +189,7 @@
   .feature-title {
     align-self: stretch;
     position: relative;
+    font-weight: 700;
   }
 
   .info {

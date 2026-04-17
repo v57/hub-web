@@ -197,6 +197,7 @@
   .toolbar__action--muted {
     background-color: var(--color-surface-muted);
     color: var(--color-text-muted);
+    font-weight: 500;
   }
 
   .toolbar__action--solid {
@@ -230,7 +231,7 @@
     position: relative;
     letter-spacing: -0.32px;
     line-height: 110%;
-    font-weight: 600 !important;
+    font-weight: 500;
   }
 
   @media (max-width: 767px) {
