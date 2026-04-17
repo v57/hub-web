@@ -68,7 +68,7 @@
     align-self: stretch;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: clamp(12px, 2vw, 16px);
   }
 
   .search {
@@ -87,7 +87,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px;
+    padding: clamp(10px, 1.5vw, 12px);
   }
 
   .icon-and-prompt {
@@ -159,7 +159,7 @@
     color: var(--color-accent);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 653px) {
     .tags {
       width: 100%;
       align-self: stretch;

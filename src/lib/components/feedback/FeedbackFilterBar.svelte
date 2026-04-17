@@ -77,7 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: clamp(14px, 2vw, 20px);
   }
 
   .filtersearch {
@@ -90,7 +90,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4px;
+    padding: clamp(3px, 0.5vw, 4px);
     gap: 0;
   }
 
@@ -206,7 +206,7 @@
     color: var(--color-accent);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 653px) {
     .sortfilter {
       gap: 12px;
     }

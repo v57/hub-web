@@ -89,8 +89,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px;
-    gap: 8px;
+    padding: clamp(14px, 1.5vw, 16px);
+    gap: clamp(6px, 1vw, 8px);
     cursor: pointer;
   }
 
@@ -99,7 +99,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: clamp(14px, 2vw, 20px);
   }
 
   .text {
@@ -171,7 +171,7 @@
     width: 588px;
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: clamp(24px, 3vw, 32px);
     text-align: justify;
     font-size: 14px;
     color: var(--color-text-muted);
@@ -284,7 +284,7 @@
     animation: like-pop 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 653px) {
     .cardfeedback {
       width: 100%;
       box-sizing: border-box;

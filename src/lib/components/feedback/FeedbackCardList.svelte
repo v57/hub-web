@@ -16,12 +16,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: clamp(12px, 2vw, 16px);
     font-size: 16px;
     color: var(--color-text);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 653px) {
     .cards {
       width: 100%;
       align-items: stretch;
