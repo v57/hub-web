@@ -67,7 +67,7 @@
 
   .iconframe,
   .iconframe2 {
-    box-shadow: 0 2px 13.9px rgb(var(--color-shadow-rgb) / 0.06);
+    box-shadow: 0 2px 13.9px rgb(var(--color-shadow-rgb) / var(--home-shadow-feature-icon-alpha, 0.06));
     border-radius: 16px;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border-soft);

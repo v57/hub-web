@@ -432,7 +432,7 @@
     padding: 0;
     height: 26px;
     width: 26px;
-    box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
+    box-shadow: 0px 2px 12.2px rgb(0 0 0 / 0.3);
     border-radius: 200px;
     background-color: var(--color-surface);
     overflow: hidden;
@@ -456,8 +456,18 @@
   .buttonicon.copied {
     background-color: var(--color-accent);
     transform: scale(1.08);
-    box-shadow: 0 6px 18px rgb(var(--color-accent-rgb) / 0.28);
+    box-shadow: 0 6px 18px rgb(var(--color-accent-rgb) / var(--home-shadow-accent-strong-alpha, 0.28));
     animation: copy-pop 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .filterplatform {
+      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+    }
+
+    .step-terminal {
+      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+    }
   }
 
   .icon {

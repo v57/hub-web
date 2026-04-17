@@ -134,6 +134,12 @@
     color: var(--color-accent-contrast);
   }
 
+  @media (prefers-color-scheme: dark) {
+    .button-container {
+      color: rgb(255 245 246 / 0.92);
+    }
+  }
+
   .buttonget2,
   .buttonget4 {
     position: relative;

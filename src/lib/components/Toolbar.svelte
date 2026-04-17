@@ -81,10 +81,10 @@
     box-sizing: border-box;
     border-radius: 30px;
     border: 1px solid var(--color-border);
-    background: rgb(var(--color-surface-rgb) / 0.2);
+    background: rgb(var(--color-surface-rgb) / 0.03);
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
-    box-shadow: 0 4px 30px rgb(var(--color-shadow-rgb) / 0.05);
+    box-shadow: 0 4px 30px rgb(var(--color-shadow-rgb) / var(--toolbar-shadow-alpha, 0.05));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,7 +197,7 @@
   .toolbar__action:hover,
   .toolbar__action:focus-visible {
     transform: translateY(-1px) scale(1.03);
-    box-shadow: 0 6px 18px rgb(var(--color-shadow-rgb) / 0.08);
+    box-shadow: 0 6px 18px rgb(var(--color-shadow-rgb) / var(--toolbar-shadow-hover-alpha, 0.08));
   }
 
   .toolbar__action--muted {

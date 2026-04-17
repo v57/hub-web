@@ -40,6 +40,12 @@
     border-radius: 16px;
   }
 
+  @media (prefers-color-scheme: dark) {
+    .frame-icon {
+      filter: saturate(0.82) brightness(0.9) contrast(0.95);
+    }
+  }
+
   .feature-description {
     position: relative;
     letter-spacing: -0.02em;

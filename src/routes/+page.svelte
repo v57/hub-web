@@ -69,6 +69,25 @@
     --home-section-padding-inline: clamp(80px, 10vw, 240px);
     --home-section-padding-inline-soft: clamp(64px, 8vw, 80px);
     --home-section-padding-block-wide: clamp(80px, 10vw, 120px);
+    --home-shadow-elevated-alpha: 0.03;
+    --home-shadow-icon-alpha: 0.06;
+    --home-shadow-accent-alpha: 0.22;
+    --home-shadow-accent-strong-alpha: 0.28;
+    --home-shadow-chip-alpha: 0.08;
+    --home-shadow-feature-card-alpha: 0.03;
+    --home-shadow-feature-icon-alpha: 0.06;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .home {
+      --home-shadow-elevated-alpha: 0.02;
+      --home-shadow-icon-alpha: 0.04;
+      --home-shadow-accent-alpha: 0.16;
+      --home-shadow-accent-strong-alpha: 0.22;
+      --home-shadow-chip-alpha: 0.05;
+      --home-shadow-feature-card-alpha: 0.2;
+      --home-shadow-feature-icon-alpha: 0.2;
+    }
   }
 
   .keep-exploring-section {

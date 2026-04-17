@@ -47,7 +47,7 @@
     z-index: 0;
     text-align: left;
     font-size: clamp(160px, 12vw + 108px, 320px);
-    color: #fa243c;
+    color: var(--color-accent);
   }
 
   .container {
@@ -91,10 +91,16 @@
     cursor: pointer;
   }
 
+  @media (prefers-color-scheme: dark) {
+    .button {
+      color: rgb(255 245 246 / 0.92);
+    }
+  }
+
   .button:hover,
   .button:focus-visible {
     transform: translateY(-1px) scale(1.03);
-    box-shadow: 0 8px 20px rgb(var(--color-accent-rgb) / 0.22);
+    box-shadow: 0 8px 20px rgb(var(--color-accent-rgb) / var(--home-shadow-accent-strong-alpha, 0.22));
   }
 
   .button:hover .logo-text,

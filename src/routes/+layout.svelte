@@ -28,6 +28,8 @@
     --color-border-rgb: 239 239 239;
     --color-border-soft: rgb(0 0 0 / 0.03);
     --color-shadow-rgb: 0 0 0;
+    --toolbar-shadow-alpha: 0.05;
+    --toolbar-shadow-hover-alpha: 0.08;
     --color-accent: #fa243c;
     --color-accent-rgb: 250 36 60;
     --color-accent-contrast: #ffffff;
@@ -42,24 +44,26 @@
 
   @media (prefers-color-scheme: dark) {
     :global(:root) {
-      --color-page: #101114;
-      --color-page-rgb: 16 17 20;
-      --color-surface: #181a1f;
-      --color-surface-rgb: 24 26 31;
-      --color-surface-muted: #20232a;
-      --color-surface-muted-rgb: 32 35 42;
-      --color-surface-accent-soft: rgb(250 36 60 / 0.18);
+      --color-page: #393733;
+      --color-page-rgb: 57 55 51;
+      --color-surface: #2b2b2c;
+      --color-surface-rgb: 43 43 44;
+      --color-surface-muted: #2b2b2c;
+      --color-surface-muted-rgb: 43 43 44;
+      --color-surface-accent-soft: rgb(250 36 60 / 0.12);
       --color-surface-accent-soft-rgb: 250 36 60;
       --color-text: #f4f4f5;
-      --color-text-muted: #a1a1aa;
-      --color-text-subtle: #71717a;
-      --color-border: rgb(255 255 255 / 0.12);
+      --color-text-muted: #a5a5a9;
+      --color-text-subtle: #8e8e93;
+      --color-border: rgb(255 255 255 / 0.1);
       --color-border-rgb: 255 255 255;
-      --color-border-soft: rgb(255 255 255 / 0.06);
+      --color-border-soft: rgb(255 255 255 / 0.03);
       --color-shadow-rgb: 0 0 0;
-      --color-accent: #ff4a62;
-      --color-accent-rgb: 255 74 98;
-      --color-accent-contrast: #101114;
+      --toolbar-shadow-alpha: 0.08;
+      --toolbar-shadow-hover-alpha: 0.12;
+      --color-accent: #fa243c;
+      --color-accent-rgb: 250 36 60;
+      --color-accent-contrast: #ffffff;
       --color-status-success: #4ade80;
       --color-status-danger: #ff6b6b;
       --color-status-info: #8b8aff;

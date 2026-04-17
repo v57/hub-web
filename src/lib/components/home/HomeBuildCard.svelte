@@ -25,7 +25,7 @@
     width: min(100%, 200px);
     min-height: 200px;
     height: auto;
-    box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / 0.03);
+    box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / var(--home-shadow-feature-card-alpha, 0.03));
     border-radius: 32px;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border-soft);
