@@ -30,7 +30,7 @@
 
 <style>
   .cardfeature {
-    width: 242px;
+    width: min(100%, 242px);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
 
   .cardfeature2 {
     height: 100%;
-    width: 242px;
+    width: min(100%, 242px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;

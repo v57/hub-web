@@ -234,7 +234,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0;
+    padding: clamp(64px, 7vw, 80px) 0;
     z-index: 1;
   }
 
@@ -242,7 +242,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: clamp(32px, 4vw, 40px);
   }
 
   .title {
@@ -494,12 +494,6 @@
   .measurement-stack {
     grid-area: auto;
   }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .get-started-section {
-      padding: 64px 0;
-    }
-  }
-
   @media (max-width: 767px) {
     .get-started-section {
       padding: 48px 16px;

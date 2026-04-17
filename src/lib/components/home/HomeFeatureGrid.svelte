@@ -15,13 +15,14 @@
   .features-container {
     align-self: stretch;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(242px, 242px));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     justify-content: center;
-    justify-items: start;
-    gap: 12px;
+    justify-items: center;
+    gap: clamp(12px, 2vw, 24px);
     text-align: left;
     font-size: 16px;
     width: 100%;
+    max-width: 774px;
     margin: 0 auto;
   }
 
@@ -34,18 +35,4 @@
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .features-container {
-      grid-template-columns: repeat(2, 242px);
-      max-width: calc((242px * 2) + 24px);
-      gap: 24px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .features-container {
-      max-width: 800px;
-      gap: 24px;
-    }
-  }
 </style>

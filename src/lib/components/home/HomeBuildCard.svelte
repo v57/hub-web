@@ -22,7 +22,9 @@
 
 <style>
   .cardpossibilities {
-    height: 200px;
+    width: min(100%, 200px);
+    min-height: 200px;
+    height: auto;
     box-shadow: 0 4px 20px rgb(var(--color-shadow-rgb) / 0.03);
     border-radius: 32px;
     background-color: var(--color-surface);
@@ -36,7 +38,7 @@
   }
 
   .container9 {
-    width: 200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,6 +143,7 @@
       width: 100%;
       max-width: 100%;
       height: auto;
+      min-height: unset;
       border-radius: 16px;
       align-items: flex-start;
       justify-content: flex-start;

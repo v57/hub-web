@@ -65,6 +65,10 @@
     text-align: center;
     font-size: 20px;
     color: var(--color-text);
+    --home-section-padding-block: clamp(64px, 7vw, 80px);
+    --home-section-padding-inline: clamp(80px, 10vw, 240px);
+    --home-section-padding-inline-soft: clamp(64px, 8vw, 80px);
+    --home-section-padding-block-wide: clamp(80px, 10vw, 120px);
   }
 
   .keep-exploring-section {
@@ -74,7 +78,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 240px;
+    padding: var(--home-section-padding-block) var(--home-section-padding-inline);
     z-index: 3;
   }
 
@@ -108,7 +112,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 240px;
+    padding: var(--home-section-padding-block) var(--home-section-padding-inline);
     z-index: 4;
   }
 
@@ -119,7 +123,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0 120px;
+    padding: var(--home-section-padding-block) var(--home-section-padding-inline-soft)
+      var(--home-section-padding-block-wide);
     z-index: 5;
   }
 
@@ -130,20 +135,6 @@
 
   .hub {
     color: var(--color-accent);
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .keep-exploring-section {
-      padding: 64px 80px;
-    }
-
-    .how-it-built-section {
-      padding: 64px 80px;
-    }
-
-    .join-our-community-section {
-      padding: 64px 80px 80px;
-    }
   }
 
   @media (max-width: 767px) {

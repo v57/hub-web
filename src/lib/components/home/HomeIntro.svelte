@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 0;
+    padding: 120px clamp(48px, 8vw, 80px);
     z-index: 2;
     font-size: 16px;
   }
@@ -99,12 +99,6 @@
 
   .less-glue-code {
     color: var(--color-text-subtle);
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .what-is-hub-section {
-      padding: 120px 80px;
-    }
   }
 
   @media (max-width: 767px) {
