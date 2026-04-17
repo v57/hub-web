@@ -67,7 +67,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 48px 80px 120px;
+    padding: 48px clamp(24px, 5vw, 80px) 120px;
     box-sizing: border-box;
     z-index: 1;
     font-size: 16px;
@@ -79,7 +79,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
-    gap: 24px;
+    gap: clamp(16px, 2vw, 24px);
     flex-shrink: 0;
   }
 
@@ -116,7 +116,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: clamp(12px, 1.5vw, 16px);
     flex: 0 0 auto;
     width: 100%;
     max-width: none;
@@ -130,7 +130,7 @@
     width: 100%;
     align-items: start;
     justify-content: flex-start;
-    gap: 24px;
+    gap: clamp(8px, 1.5vw, 24px);
     text-align: left;
     font-size: 12px;
   }
@@ -146,7 +146,7 @@
     font-weight: 600;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 600px) {
     .support-section {
       padding: 32px 16px 120px;
     }

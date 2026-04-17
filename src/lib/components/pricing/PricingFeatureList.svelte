@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: clamp(6px, 0.8vw, 8px);
     font-size: 14px;
     color: var(--color-text);
   }
@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 4px;
+    gap: clamp(4px, 0.5vw, 6px);
   }
 
   .frame-icon {
@@ -45,15 +45,15 @@
     letter-spacing: -0.02em;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 600px) {
     .feature-list--two-column {
       display: grid;
       width: 100%;
       grid-auto-flow: column;
       grid-template-rows: repeat(3, auto);
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 12px;
-      row-gap: 8px;
+      column-gap: clamp(10px, 1.5vw, 12px);
+      row-gap: clamp(6px, 1vw, 8px);
       align-items: start;
     }
   }

@@ -96,18 +96,18 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: clamp(12px, 1.5vw, 20px);
   }
 
   .frame-group {
-    gap: 13px;
+    gap: clamp(10px, 1.2vw, 13px);
   }
 
   .plan-name-parent {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: clamp(12px, 1.5vw, 16px);
   }
 
   .plan-name {
@@ -130,7 +130,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: clamp(4px, 0.75vw, 8px);
     color: var(--color-accent-contrast);
   }
 
