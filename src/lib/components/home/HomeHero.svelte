@@ -21,7 +21,11 @@
           <div class="platform">
             <div class="platform-name">{platform.name}</div>
             <div class={platform.wrapperClass}>
-              <img class={platform.iconClass} src={platform.src} alt="" />
+              <img
+                class={[platform.iconClass, platform.iconAdjustClass].filter(Boolean).join(' ')}
+                src={platform.src}
+                alt=""
+              />
             </div>
           </div>
         {/each}
@@ -142,13 +146,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 8px;
   }
 
   .platform-name {
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .iconplatform {
@@ -156,6 +160,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .iconplatform-macos {
+    overflow: visible;
   }
 
   .iconplatform3 {
@@ -209,6 +217,19 @@
 
   .group-icon5 {
     width: 13.8px;
+  }
+
+  .icon-adjust-macos {
+    transform: translateY(-3px);
+  }
+
+  .icon-adjust-ios {
+    transform: translateX(1px);
+  }
+
+  .icon-adjust-windows {
+    transform: scale(0.8);
+    transform-origin: center;
   }
 
   .available-on .platforms img {
