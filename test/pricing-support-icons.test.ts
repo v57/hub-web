@@ -23,6 +23,10 @@ describe('pricing support icons', () => {
       expect(svg).toContain('width="64"');
       expect(svg).toContain('height="64"');
       expect(svg).toContain('<path');
+
+      if (fileName === 'github.svg') {
+        expect(svg).toContain('fill="#181717"');
+      }
     }
   });
 });

@@ -228,7 +228,7 @@ export const communityLinks: HomeCommunityLink[] = [
   {
     outerClass: 'link',
     imageSrc: '/files/apps/github.svg',
-    imageClass: 'vector-icon6',
+    imageClass: 'vector-icon6 github-icon',
     title: 'GitHub',
     description: '@v57/hub · Source code & contributions'
   },

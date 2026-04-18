@@ -96,4 +96,10 @@
     height: 68%;
     object-fit: contain;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .icon-link-tile img.github-icon {
+      filter: brightness(0) invert(1);
+    }
+  }
 </style>
