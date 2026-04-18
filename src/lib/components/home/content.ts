@@ -41,6 +41,7 @@ export type HomeGetStartedPlatform = {
 export type HomeCommunityLink = {
   outerClass: string;
   imageSrc: string;
+  darkImageSrc?: string;
   imageClass: string;
   title: string;
   description: string;
@@ -234,7 +235,8 @@ export const communityLinks: HomeCommunityLink[] = [
   },
   {
     outerClass: 'link2',
-    imageSrc: '/files/apps/reddit-svgrepo-com.svg',
+    imageSrc: '/files/apps/reddit-svgrepo-com-light.svg',
+    darkImageSrc: '/files/apps/reddit-svgrepo-com.svg',
     imageClass: 'vector-icon6 reddit-icon',
     title: 'Reddit',
     description: '@v57/hub · Discussions & feedback'

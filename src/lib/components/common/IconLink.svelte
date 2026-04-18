@@ -2,6 +2,7 @@
   export let href: string;
   export let imageClass = '';
   export let imageSrc: string;
+  export let darkImageSrc = '';
   export let layout: 'horizontal' | 'vertical' = 'vertical';
   export let outerClass = '';
   export let radius = 16;
@@ -21,7 +22,14 @@
   style={`--icon-size:${size}px;--icon-radius:${radius}px;--icon-gap:${gap}px;`}
 >
   <div class="icon-link-tile">
-    <img class={imageClass} src={imageSrc} alt="" />
+    {#if darkImageSrc}
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset={darkImageSrc} />
+        <img class={imageClass} src={imageSrc} alt="" />
+      </picture>
+    {:else}
+      <img class={imageClass} src={imageSrc} alt="" />
+    {/if}
   </div>
   <div class="icon-link-content">
     <slot />
@@ -85,8 +93,29 @@
     transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  .icon-link-tile picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .icon-link-tile picture img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
   .icon-link:hover .icon-link-tile img,
   .icon-link:focus-visible .icon-link-tile img {
+    transform: scale(1.06);
+  }
+
+  .icon-link:hover .icon-link-tile picture img,
+  .icon-link:focus-visible .icon-link-tile picture img {
     transform: scale(1.06);
   }
 

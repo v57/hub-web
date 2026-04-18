@@ -10,6 +10,7 @@
     <IconLink
       href="https://github.com/v57"
       imageSrc={link.imageSrc}
+      darkImageSrc={link.darkImageSrc}
       imageClass={link.imageClass}
       layout="horizontal"
       outerClass={link.outerClass}
