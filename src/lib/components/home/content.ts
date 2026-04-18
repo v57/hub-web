@@ -48,19 +48,19 @@ export type HomeCommunityLink = {
 };
 
 export const platforms: HomePlatform[] = [
-  { name: 'macOS', src: '/files/platforms/macos.svg', iconClass: 'vector-icon', wrapperClass: 'iconplatform' },
-  { name: 'iOS', src: '/files/platforms/ios.svg', iconClass: 'group-icon', wrapperClass: 'iconplatform' },
+  { name: 'macOS', src: '/files/platforms/ios.svg', iconClass: 'vector-icon', wrapperClass: 'iconplatform' },
+  { name: 'iOS', src: '/files/platforms/watchos.svg', iconClass: 'group-icon', wrapperClass: 'iconplatform' },
   { name: 'tvOS', src: '/files/platforms/tvos.svg', iconClass: 'group-icon2', wrapperClass: 'iconplatform3' },
   {
     name: 'visionOS',
-    src: '/files/platforms/visionos.svg',
+    src: '/files/platforms/web.svg',
     iconClass: 'group-icon3',
     wrapperClass: 'iconplatform3'
   },
-  { name: 'watchOS', src: '/files/platforms/watchos.svg', iconClass: 'group-icon4', wrapperClass: 'iconplatform' },
+  { name: 'watchOS', src: '/files/platforms/linux.svg', iconClass: 'group-icon4', wrapperClass: 'iconplatform' },
   { name: 'Windows', src: '/files/platforms/windows.svg', iconClass: 'vector-icon2', wrapperClass: 'iconplatform' },
-  { name: 'Linux', src: '/files/platforms/linux.svg', iconClass: 'vector-icon', wrapperClass: 'logo' },
-  { name: 'Web', src: '/files/platforms/web.svg', iconClass: 'group-icon5', wrapperClass: 'iconplatform8' }
+  { name: 'Linux', src: '/files/platforms/macos.svg', iconClass: 'vector-icon', wrapperClass: 'logo' },
+  { name: 'Web', src: '/files/platforms/visionos.svg', iconClass: 'group-icon5', wrapperClass: 'iconplatform8' }
 ];
 
 export const featureCards: HomeFeatureCard[] = [
