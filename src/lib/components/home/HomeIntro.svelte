@@ -4,14 +4,14 @@
       <div class="logo-icon">
         <img class="icon3" src="/files/icon/large.png" alt="" />
       </div>
-      <b class="logo-text">Hub</b>
+      <span class="logo-text">Hub</span>
     </div>
     <div class="title6">
-      <b class="logo-text">
+      <span class="logo-text">
         <span>Publish, connect, stream. All in one </span>
         <span class="hub">Hub</span>
         <span>.</span>
-      </b>
+      </span>
     </div>
     <div class="section-description">
       <span
@@ -28,10 +28,12 @@
 <style>
   .what-is-hub-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 0;
+    padding: 120px clamp(48px, 8vw, 80px);
     z-index: 2;
     font-size: 16px;
   }
@@ -47,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 0;
     text-align: left;
   }
 
@@ -77,12 +79,17 @@
     color: var(--color-accent);
   }
 
+  .logo-text {
+    font-weight: 500;
+  }
+
   .section-description {
-    width: 711px;
+    width: 100%;
+    max-width: 711px;
     position: relative;
     font-size: 14px;
     letter-spacing: -0.02em;
-    display: inline-block;
+    display: block;
     color: var(--color-text-muted);
   }
 
@@ -92,5 +99,11 @@
 
   .less-glue-code {
     color: var(--color-text-subtle);
+  }
+
+  @media (max-width: 767px) {
+    .what-is-hub-section {
+      padding: 48px 16px;
+    }
   }
 </style>

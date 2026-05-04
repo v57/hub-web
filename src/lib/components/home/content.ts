@@ -3,6 +3,7 @@ export type HomePlatform = {
   src: string;
   iconClass: string;
   wrapperClass: string;
+  iconAdjustClass?: string;
 };
 
 export type HomeFeatureCard = {
@@ -41,25 +42,44 @@ export type HomeGetStartedPlatform = {
 export type HomeCommunityLink = {
   outerClass: string;
   imageSrc: string;
+  darkImageSrc?: string;
   imageClass: string;
   title: string;
   description: string;
 };
 
 export const platforms: HomePlatform[] = [
-  { name: 'macOS', src: '/files/platforms/macos.svg', iconClass: 'vector-icon', wrapperClass: 'iconplatform' },
-  { name: 'iOS', src: '/files/platforms/ios.svg', iconClass: 'group-icon', wrapperClass: 'iconplatform' },
+  {
+    name: 'macOS',
+    src: '/files/platforms/ios.svg',
+    iconClass: 'vector-icon',
+    wrapperClass: 'iconplatform iconplatform-macos',
+    iconAdjustClass: 'icon-adjust-macos'
+  },
+  {
+    name: 'iOS',
+    src: '/files/platforms/watchos.svg',
+    iconClass: 'group-icon',
+    wrapperClass: 'iconplatform',
+    iconAdjustClass: 'icon-adjust-ios'
+  },
   { name: 'tvOS', src: '/files/platforms/tvos.svg', iconClass: 'group-icon2', wrapperClass: 'iconplatform3' },
   {
     name: 'visionOS',
-    src: '/files/platforms/visionos.svg',
+    src: '/files/platforms/web.svg',
     iconClass: 'group-icon3',
     wrapperClass: 'iconplatform3'
   },
-  { name: 'watchOS', src: '/files/platforms/watchos.svg', iconClass: 'group-icon4', wrapperClass: 'iconplatform' },
-  { name: 'Windows', src: '/files/platforms/windows.svg', iconClass: 'vector-icon2', wrapperClass: 'iconplatform' },
-  { name: 'Linux', src: '/files/platforms/linux.svg', iconClass: 'vector-icon', wrapperClass: 'logo' },
-  { name: 'Web', src: '/files/platforms/web.svg', iconClass: 'group-icon5', wrapperClass: 'iconplatform8' }
+  { name: 'watchOS', src: '/files/platforms/linux.svg', iconClass: 'group-icon4', wrapperClass: 'iconplatform' },
+  {
+    name: 'Windows',
+    src: '/files/platforms/windows.svg',
+    iconClass: 'vector-icon2',
+    wrapperClass: 'iconplatform',
+    iconAdjustClass: 'icon-adjust-windows'
+  },
+  { name: 'Linux', src: '/files/platforms/macos.svg', iconClass: 'vector-icon', wrapperClass: 'logo' },
+  { name: 'Web', src: '/files/platforms/visionos.svg', iconClass: 'group-icon5', wrapperClass: 'iconplatform8' }
 ];
 
 export const featureCards: HomeFeatureCard[] = [
@@ -228,14 +248,15 @@ export const communityLinks: HomeCommunityLink[] = [
   {
     outerClass: 'link',
     imageSrc: '/files/apps/github.svg',
-    imageClass: 'vector-icon6',
+    imageClass: 'vector-icon6 github-icon',
     title: 'GitHub',
     description: '@v57/hub · Source code & contributions'
   },
   {
     outerClass: 'link2',
-    imageSrc: '/files/apps/reddit.svg',
-    imageClass: 'vector-icon6',
+    imageSrc: '/files/apps/reddit-svgrepo-com-light.svg',
+    darkImageSrc: '/files/apps/reddit-svgrepo-com.svg',
+    imageClass: 'vector-icon6 reddit-icon',
     title: 'Reddit',
     description: '@v57/hub · Discussions & feedback'
   },

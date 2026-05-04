@@ -19,6 +19,16 @@ describe('home content', () => {
       'Linux',
       'Web'
     ]);
+    expect(platforms.map((platform) => platform.src)).toEqual([
+      '/files/platforms/ios.svg',
+      '/files/platforms/watchos.svg',
+      '/files/platforms/tvos.svg',
+      '/files/platforms/web.svg',
+      '/files/platforms/linux.svg',
+      '/files/platforms/windows.svg',
+      '/files/platforms/macos.svg',
+      '/files/platforms/visionos.svg'
+    ]);
     expect(featureCards).toHaveLength(6);
     expect(buildCards).toHaveLength(5);
     expect(communityLinks.map((link) => link.title)).toEqual(['GitHub', 'Reddit', 'Discord', 'Twitter']);

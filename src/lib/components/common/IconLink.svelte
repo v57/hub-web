@@ -2,6 +2,7 @@
   export let href: string;
   export let imageClass = '';
   export let imageSrc: string;
+  export let darkImageSrc = '';
   export let layout: 'horizontal' | 'vertical' = 'vertical';
   export let outerClass = '';
   export let radius = 16;
@@ -21,7 +22,14 @@
   style={`--icon-size:${size}px;--icon-radius:${radius}px;--icon-gap:${gap}px;`}
 >
   <div class="icon-link-tile">
-    <img class={imageClass} src={imageSrc} alt="" />
+    {#if darkImageSrc}
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset={darkImageSrc} />
+        <img class={imageClass} src={imageSrc} alt="" />
+      </picture>
+    {:else}
+      <img class={imageClass} src={imageSrc} alt="" />
+    {/if}
   </div>
   <div class="icon-link-content">
     <slot />
@@ -34,6 +42,17 @@
     align-items: center;
     gap: var(--icon-gap);
     cursor: pointer;
+    text-decoration: none;
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 180ms ease;
+    will-change: transform, filter;
+  }
+
+  .icon-link:hover,
+  .icon-link:focus-visible {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 10px 20px rgb(var(--color-shadow-rgb) / 0.08));
   }
 
   .icon-link.vertical {
@@ -52,6 +71,16 @@
     border-radius: var(--icon-radius);
     overflow: hidden;
     box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms ease;
+    will-change: transform, box-shadow;
+  }
+
+  .icon-link:hover .icon-link-tile,
+  .icon-link:focus-visible .icon-link-tile {
+    transform: scale(1.03);
+    box-shadow: 0 8px 22px rgb(var(--color-shadow-rgb) / 0.14);
   }
 
   .icon-link-tile img {
@@ -61,5 +90,45 @@
     height: 100%;
     display: block;
     object-fit: cover;
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .icon-link-tile picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .icon-link-tile picture img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .icon-link:hover .icon-link-tile img,
+  .icon-link:focus-visible .icon-link-tile img {
+    transform: scale(1.06);
+  }
+
+  .icon-link:hover .icon-link-tile picture img,
+  .icon-link:focus-visible .icon-link-tile picture img {
+    transform: scale(1.06);
+  }
+
+  .icon-link-tile img.reddit-icon {
+    inset: 16%;
+    width: 68%;
+    height: 68%;
+    object-fit: contain;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .icon-link-tile img.github-icon {
+      filter: brightness(0) invert(1);
+    }
   }
 </style>

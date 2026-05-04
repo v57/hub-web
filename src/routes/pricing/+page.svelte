@@ -41,6 +41,9 @@
     text-align: center;
     font-size: 20px;
     color: var(--color-text);
+    --pricing-section-top: clamp(104px, 9vw, 120px);
+    --pricing-section-gap: clamp(28px, 3vw, 40px);
+    --pricing-card-gap: clamp(20px, 3vw, 40px);
   }
 
   .pricing-section {
@@ -48,8 +51,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 0 0;
-    gap: 40px;
+    padding: var(--pricing-section-top) 0 0;
+    gap: var(--pricing-section-gap);
     z-index: 0;
   }
 
@@ -61,11 +64,26 @@
 
   .price-card {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-end;
-    gap: 40px;
+    gap: var(--pricing-card-gap);
     text-align: left;
     font-size: 16px;
     color: var(--color-accent);
+  }
+
+  @media (max-width: 600px) {
+    .pricing-section {
+      padding: 88px 16px 0;
+      gap: 20px;
+    }
+
+    .price-card {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 14px;
+    }
   }
 </style>

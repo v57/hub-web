@@ -7,21 +7,25 @@
 <div class="hero-section">
   <div class="container">
     <div class="logo">
-      <b class="logo-text">HUB</b>
+      <span class="logo-text">HUB</span>
     </div>
     <div class="button">
-      <b class="logo-text">Download</b>
+      <span class="logo-text">Download</span>
     </div>
   </div>
   <div class="container2">
     <div class="available-on">
-      <b class="logo-text">Available on</b>
+      <span class="logo-text">Available on</span>
       <div class="platforms">
         {#each platforms as platform}
           <div class="platform">
             <div class="platform-name">{platform.name}</div>
             <div class={platform.wrapperClass}>
-              <img class={platform.iconClass} src={platform.src} alt="" />
+              <img
+                class={[platform.iconClass, platform.iconAdjustClass].filter(Boolean).join(' ')}
+                src={platform.src}
+                alt=""
+              />
             </div>
           </div>
         {/each}
@@ -33,7 +37,10 @@
 <style>
   .hero-section {
     align-self: stretch;
-    height: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    min-height: 700px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -43,8 +50,8 @@
     isolation: isolate;
     z-index: 0;
     text-align: left;
-    font-size: 320px;
-    color: #fa243c;
+    font-size: clamp(160px, 12vw + 108px, 320px);
+    color: var(--color-accent);
   }
 
   .container {
@@ -64,6 +71,7 @@
 
   .logo-text {
     position: relative;
+    font-weight: 500;
   }
 
   .button {
@@ -79,6 +87,29 @@
     min-height: 32px;
     font-size: 16px;
     color: var(--color-accent-contrast);
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms ease,
+      background-color 180ms ease;
+    will-change: transform, box-shadow, background-color;
+    cursor: pointer;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .button {
+      color: rgb(255 245 246 / 0.92);
+    }
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 8px 20px rgb(var(--color-accent-rgb) / var(--home-shadow-accent-strong-alpha, 0.22));
+  }
+
+  .button:hover .logo-text,
+  .button:focus-visible .logo-text {
+    animation: button-pop 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .container2 {
@@ -88,7 +119,7 @@
     bottom: 0;
     display: flex;
     align-items: center;
-    padding: 80px;
+    padding: clamp(24px, 5vw, 80px);
     z-index: 1;
     font-size: 16px;
     color: var(--color-text-subtle);
@@ -115,13 +146,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 8px;
   }
 
   .platform-name {
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .iconplatform {
@@ -129,6 +160,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .iconplatform-macos {
+    overflow: visible;
   }
 
   .iconplatform3 {
@@ -184,11 +219,59 @@
     width: 13.8px;
   }
 
+  .icon-adjust-macos {
+    transform: translateY(-3px);
+  }
+
+  .icon-adjust-ios {
+    transform: translateX(1px);
+  }
+
+  .icon-adjust-windows {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+
   .available-on .platforms img {
     width: 24px;
     height: 24px;
     object-fit: contain;
     flex-shrink: 0;
     display: block;
+  }
+
+  @media (max-width: 767px) {
+    .container2 {
+      left: 0;
+      right: 0;
+      padding: 0 clamp(16px, 4vw, 24px) clamp(32px, 5vw, 48px);
+      justify-content: center;
+    }
+
+    .available-on {
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .platforms {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+  }
+
+  @keyframes button-pop {
+    0% {
+      transform: scale(0.98);
+    }
+    60% {
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 </style>

@@ -9,6 +9,10 @@
   let selectedInstructions: HomeGetStartedPlatform = getStartedPlatforms[0];
   let pickerElement: HTMLDivElement | null = null;
   let pickerButtons: HTMLButtonElement[] = [];
+  let measurementRoot: HTMLDivElement | null = null;
+  let measurementStacks: Array<HTMLDivElement | null> = [];
+  let instructionsHeight: number | null = null;
+  let stepTerminalWidth: number | null = null;
   let capsuleLeft = 0;
   let capsuleWidth = 0;
   let copiedStepId: string | null = null;
@@ -31,6 +35,28 @@
 
     capsuleLeft = button.offsetLeft;
     capsuleWidth = button.offsetWidth;
+  }
+
+  function updateInstructionsHeight() {
+    const nextHeight = measurementStacks.reduce((maxHeight, element) => {
+      return element ? Math.max(maxHeight, element.offsetHeight) : maxHeight;
+    }, 0);
+
+    instructionsHeight = nextHeight;
+  }
+
+  function updateStepTerminalWidth() {
+    if (!measurementRoot) {
+      stepTerminalWidth = null;
+      return;
+    }
+
+    const terminals = Array.from(
+      measurementRoot.querySelectorAll<HTMLElement>('.measurement-step-terminal')
+    );
+    const nextWidth = terminals.reduce((maxWidth, element) => Math.max(maxWidth, element.offsetWidth), 0);
+
+    stepTerminalWidth = nextWidth;
   }
 
   async function copyCommand(command: string, stepId: string) {
@@ -73,9 +99,20 @@
 
     const resizeObserver = new ResizeObserver(() => {
       updateCapsule();
+      updateInstructionsHeight();
+      updateStepTerminalWidth();
     });
 
     resizeObserver.observe(pickerElement);
+
+    if (measurementRoot) {
+      resizeObserver.observe(measurementRoot);
+    }
+
+    updateInstructionsHeight();
+    updateStepTerminalWidth();
+    requestAnimationFrame(updateInstructionsHeight);
+    requestAnimationFrame(updateStepTerminalWidth);
 
     return () => {
       resizeObserver.disconnect();
@@ -92,7 +129,7 @@
 <div class="get-started-section">
   <div class="section-container">
     <div class="title">
-      <b class="logo-text">Get started in seconds</b>
+      <span class="logo-text">Get started in seconds</span>
     </div>
     <div class="steps-container">
       <div class="filterplatform" bind:this={pickerElement} role="group" aria-label="Installation platform">
@@ -116,7 +153,11 @@
           </button>
         {/each}
       </div>
-      <div class="instructions">
+      <div
+        class="instructions"
+        style:--instructions-height={instructionsHeight === null ? null : `${instructionsHeight}px`}
+        style:--step-terminal-width={stepTerminalWidth === null ? null : `${stepTerminalWidth}px`}
+      >
         {#key selectedPlatform}
           <div class="instruction-stack" transition:fly={{ duration: 180, y: 10, opacity: 0 }}>
             {#each selectedInstructions.steps as step}
@@ -154,6 +195,32 @@
           </div>
         {/key}
       </div>
+      <div class="instructions-measure" aria-hidden="true" bind:this={measurementRoot}>
+        {#each getStartedPlatforms as platform, index}
+          <div class="instruction-stack measurement-stack" bind:this={measurementStacks[index]}>
+            {#each platform.steps as step}
+              <div class="step-container">
+                <div class="platform-name">{step.title}</div>
+                <div class="step-terminal measurement-step-terminal">
+                  <div class="title-container">
+                    <div class="icon-container">
+                      <img class="frame-icon" src="/files/ui/terminal.svg" alt="" />
+                      <div class="platform-name copied-label">{step.terminal}</div>
+                    </div>
+                    <pre class="command-text"><code>{step.command}</code></pre>
+                  </div>
+                  <button type="button" class="buttonicon" tabindex="-1" aria-hidden="true">
+                    <img class="icon" src="/files/ui/copy.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            {/each}
+            {#if platform.description}
+              <p class="platform-description">{platform.description}</p>
+            {/if}
+          </div>
+        {/each}
+      </div>
     </div>
   </div>
 </div>
@@ -161,11 +228,13 @@
 <style>
   .get-started-section {
     align-self: stretch;
+    width: 100%;
+    box-sizing: border-box;
     background-color: var(--color-surface-muted);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0;
+    padding: clamp(64px, 7vw, 80px) 0;
     z-index: 1;
   }
 
@@ -173,12 +242,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: clamp(32px, 4vw, 40px);
   }
 
   .title {
     display: flex;
     align-items: center;
+  }
+
+  .logo-text {
+    font-weight: 600;
   }
 
   .steps-container {
@@ -238,10 +311,29 @@
     color: var(--color-text-muted);
     border-radius: 200px;
     padding: 4px 8px;
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 180ms ease,
+      color 180ms ease,
+      box-shadow 180ms ease;
+    will-change: transform, background-color, color, box-shadow;
   }
 
   .chip.selected {
     color: var(--color-accent-contrast);
+  }
+
+  .chip:hover:not(.selected),
+  .chip:focus-visible:not(.selected) {
+    background-color: var(--color-surface-accent-soft);
+    color: var(--color-accent);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 12px rgb(var(--color-shadow-rgb) / 0.08);
+  }
+
+  .chip:hover:not(.selected) .platform-name,
+  .chip:focus-visible:not(.selected) .platform-name {
+    animation: chip-pop 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .instructions {
@@ -249,7 +341,26 @@
     justify-items: center;
     align-items: start;
     width: fit-content;
-    min-height: 176px;
+    min-height: var(--instructions-height, 176px);
+    position: relative;
+  }
+
+  .instructions-measure {
+    position: absolute;
+    inset: 0 auto auto 0;
+    visibility: hidden;
+    pointer-events: none;
+    width: fit-content;
+    z-index: -1;
+    overflow: hidden;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+  }
+
+  .instructions-measure .step-terminal {
+    width: fit-content;
+    max-width: none;
   }
 
   .instruction-stack {
@@ -279,7 +390,8 @@
     padding: 12px 16px;
     gap: 20px;
     color: var(--color-accent);
-    width: fit-content;
+    width: var(--step-terminal-width, fit-content);
+    max-width: 100%;
   }
 
   .title-container {
@@ -320,7 +432,7 @@
     padding: 0;
     height: 26px;
     width: 26px;
-    box-shadow: 0 2px 12.2px rgb(var(--color-shadow-rgb) / 0.1);
+    box-shadow: 0px 2px 12.2px rgb(0 0 0 / 0.3);
     border-radius: 200px;
     background-color: var(--color-surface);
     overflow: hidden;
@@ -337,11 +449,25 @@
     cursor: pointer;
   }
 
+  .buttonicon:hover {
+    background-color: var(--color-surface-accent-soft);
+  }
+
   .buttonicon.copied {
     background-color: var(--color-accent);
     transform: scale(1.08);
-    box-shadow: 0 6px 18px rgb(var(--color-accent-rgb) / 0.28);
+    box-shadow: 0 6px 18px rgb(var(--color-accent-rgb) / var(--home-shadow-accent-strong-alpha, 0.28));
     animation: copy-pop 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .filterplatform {
+      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+    }
+
+    .step-terminal {
+      box-shadow: 0px 4px 20px rgb(0 0 0 / 0.2);
+    }
   }
 
   .icon {
@@ -375,6 +501,19 @@
     text-align: center;
   }
 
+  .measurement-stack {
+    grid-area: auto;
+  }
+  @media (max-width: 767px) {
+    .get-started-section {
+      padding: 48px 16px;
+    }
+
+    .section-container {
+      gap: 32px;
+    }
+  }
+
   @keyframes copy-pop {
     0% {
       transform: scale(0.92);
@@ -396,6 +535,18 @@
     }
     72% {
       transform: scale(0.98);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes chip-pop {
+    0% {
+      transform: scale(0.98);
+    }
+    60% {
+      transform: scale(1.04);
     }
     100% {
       transform: scale(1);

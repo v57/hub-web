@@ -19,7 +19,13 @@
     justify-content: center;
     flex-wrap: wrap;
     align-content: center;
-    gap: 24px;
+    gap: clamp(16px, 2vw, 24px);
     font-size: 16px;
+  }
+
+  @media (max-width: 767px) {
+    .how-built-information {
+      gap: 16px;
+    }
   }
 </style>

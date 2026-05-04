@@ -12,7 +12,7 @@
           <img class={card.imageClass} src={card.src} alt="" />
         </div>
       </div>
-      <b class="feature-title">{card.title}</b>
+      <span class="feature-title">{card.title}</span>
     </div>
     <div class="info">
       <div class="section-title2">{card.sectionTitle}</div>
@@ -30,16 +30,18 @@
 
 <style>
   .cardfeature {
-    width: 242px;
+    width: min(100%, 242px);
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 8px;
   }
 
   .cardfeature2 {
-    height: 244px;
-    width: 242px;
+    height: 100%;
+    width: min(100%, 242px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -52,7 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 8px;
   }
 
   .title7 {
@@ -65,7 +67,7 @@
 
   .iconframe,
   .iconframe2 {
-    box-shadow: 0 2px 13.9px rgb(var(--color-shadow-rgb) / 0.06);
+    box-shadow: 0 2px 13.9px rgb(var(--color-shadow-rgb) / var(--home-shadow-feature-icon-alpha, 0.06));
     border-radius: 16px;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border-soft);
@@ -187,6 +189,7 @@
   .feature-title {
     align-self: stretch;
     position: relative;
+    font-weight: 500;
   }
 
   .info {
@@ -230,5 +233,82 @@
     align-items: center;
     justify-content: center;
     padding: 4px 8px;
+  }
+
+  .cardfeature2 .container3 {
+    flex: 1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .iconframe,
+    .iconframe2 {
+      border-color: var(--color-border);
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.22);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cardfeature,
+    .cardfeature2 {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 12px;
+      row-gap: 8px;
+      align-items: start;
+      justify-items: stretch;
+    }
+
+    .container3 {
+      display: contents;
+    }
+
+    .title7 {
+      display: contents;
+    }
+
+    .iconframe,
+    .iconframe2 {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      align-self: start;
+    }
+
+    .feature-title {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: start;
+      height: auto;
+    }
+
+    .info {
+      grid-column: 2;
+      grid-row: 2;
+      gap: 0;
+      min-width: 0;
+    }
+
+    .tags4,
+    .tags5 {
+      grid-column: 2;
+      grid-row: 3;
+      align-self: start;
+      justify-self: start;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .section-description2 {
+      text-align: left;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .cardfeature,
+    .cardfeature2 {
+      gap: 12px;
+    }
   }
 </style>

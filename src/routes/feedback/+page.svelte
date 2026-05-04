@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 0;
+    padding: clamp(96px, 12vw, 120px) 0;
     z-index: 0;
   }
 
@@ -57,14 +57,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: clamp(24px, 3vw, 32px);
   }
 
   .cards-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: clamp(12px, 2vw, 16px);
     text-align: left;
     font-size: 12px;
   }
@@ -73,6 +73,12 @@
     align-self: stretch;
     position: relative;
     letter-spacing: -0.32px;
-    font-weight: 600;
+    font-weight: 500;
+  }
+
+  @media (max-width: 653px) {
+    .feedback-section {
+      padding: 80px 16px 80px;
+    }
   }
 </style>
