@@ -22,7 +22,7 @@
     text-align: left;
     font-size: 16px;
     width: 100%;
-    max-width: 774px;
+    max-width: 1040px;
     margin: 0 auto;
   }
 

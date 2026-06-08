@@ -7,22 +7,13 @@ export type HomePlatform = {
 };
 
 export type HomeFeatureCard = {
-  wrapperClass: string;
-  iconFrameClass: string;
-  iconWrapperClass: string;
-  imageClass: string;
-  src: string;
+  icon: string;
   title: string;
-  sectionTitle: string;
   description: string;
-  tagsClass: string;
-  tags: string[];
 };
 
 export type HomeBuildCard = {
-  iconWrapperClass: string;
-  imageClass: string;
-  src: string;
+  icon: string;
   title: string;
   description: string;
 };
@@ -84,119 +75,88 @@ export const platforms: HomePlatform[] = [
 
 export const featureCards: HomeFeatureCard[] = [
   {
-    wrapperClass: 'cardfeature',
-    iconFrameClass: 'iconframe',
-    iconWrapperClass: 'iconfeatures',
-    imageClass: 'channel-icon',
-    src: '/files/features/channel.svg',
-    title: 'Channel',
-    sectionTitle: 'Protocol layer',
+    icon: 'link',
+    title: 'Device Mesh',
     description:
-      'The communication layer that keeps your apps talking in request, stream, and event modes with quick reconnects and clean message handling.',
-    tagsClass: 'tags4',
-    tags: ['Open in', 'Bun']
+      'Connect iPhone, iPad, Mac, Windows, Linux, and server devices into one Hub so idle hardware can share work instead of sitting unused.'
   },
   {
-    wrapperClass: 'cardfeature2',
-    iconFrameClass: 'iconframe2',
-    iconWrapperClass: 'iconfeatures2',
-    imageClass: 'lite-icon',
-    src: '/files/features/lite.svg',
-    title: 'Hub Lite',
-    sectionTitle: 'Runtime',
+    icon: 'cpu',
+    title: 'Local Compute',
     description:
-      'A lighter setup for connecting worker services and routing calls across local devices with simple operational overhead.',
-    tagsClass: 'tags5',
-    tags: ['Bun']
+      'Use nearby devices for heavy jobs like image encoding, video compression, translation, LLM chat, content filtering, and other AI or media tasks.'
   },
   {
-    wrapperClass: 'cardfeature2',
-    iconFrameClass: 'iconframe2',
-    iconWrapperClass: 'iconfeatures3',
-    imageClass: 'pro-icon',
-    src: '/files/features/pro.svg',
-    title: 'Hub Pro',
-    sectionTitle: 'Production',
+    icon: 'server.rack',
+    title: 'Service APIs',
     description:
-      'A production-ready hub with access rules, groups, proxy/merge topologies, and stronger operational controls.',
-    tagsClass: 'tags5',
-    tags: ['Bun']
+      'Turn app features, scripts, terminal commands, and reusable backend modules into services that Hub exposes as simple APIs across projects.'
   },
   {
-    wrapperClass: 'cardfeature',
-    iconFrameClass: 'iconframe2',
-    iconWrapperClass: 'iconfeatures4',
-    imageClass: 'service-icon',
-    src: '/files/features/service.svg',
-    title: 'Hub Service',
-    sectionTitle: 'Service layer',
-    description: 'A simple SDK for turning worker apps into callable services with typed endpoints and response types.',
-    tagsClass: 'tags5',
-    tags: ['Bun']
-  },
-  {
-    wrapperClass: 'cardfeature',
-    iconFrameClass: 'iconframe2',
-    iconWrapperClass: 'iconfeatures5',
-    imageClass: 'launcher-icon',
-    src: '/files/features/launcher.svg',
-    title: 'Hub Launcher',
-    sectionTitle: 'Ops',
+    icon: 'externaldrive.connected.to.line.below',
+    title: 'Shared Storage',
     description:
-      'A handy controller for installing apps, starting services, and scaling or restarting fleets from one place.',
-    tagsClass: 'tags5',
-    tags: ['Bun']
+      'Combine storage from devices or S3 providers, including Local S3, so files, static assets, configs, and processing outputs can be shared through Hub.'
   },
   {
-    wrapperClass: 'cardfeature',
-    iconFrameClass: 'iconframe2',
-    iconWrapperClass: 'iconfeatures6',
-    imageClass: 'web-icon',
-    src: '/files/features/web.svg',
-    title: 'Hub Web',
-    sectionTitle: 'Docs shell',
-    description: 'A clean, friendly docs site that gathers package and feature details for this whole hub stack.',
-    tagsClass: 'tags4',
-    tags: ['Open in site', 'Bun']
+    icon: 'play.circle',
+    title: 'Auto Launcher',
+    description:
+      'Keep hubs, services, servers, and any process online with automatic restarts, resource monitoring, updates, imports, and multi-instance scaling.'
+  },
+  {
+    icon: 'scale.3d',
+    title: 'Load Balance',
+    description:
+      'Automatically split identical service APIs across available devices, with Hub Pro controls for balancing strategy and active request limits.'
+  },
+  {
+    icon: 'lock.shield',
+    title: 'Access Control',
+    description:
+      'Use Hub Pro to invite people, connect multiple hubs, manage service permissions, and lock down access for teams or remote devices.'
+  },
+  {
+    icon: 'heart.circle',
+    title: 'Open Source',
+    description:
+      'Hub is free, transparent, dependency-light, and built without ads or tracking, with GitHub-based stores and feedback for community-driven services.'
   }
 ];
 
 export const buildCards: HomeBuildCard[] = [
   {
-    iconWrapperClass: 'iconfeatures7',
-    imageClass: 'web-icon2',
-    src: '/files/features/worker-sdk.svg',
-    title: 'Worker SDK',
-    description: 'Hub Service lets each worker publish clean, secure APIs that your hub can call.'
-  },
-  {
-    iconWrapperClass: 'iconfeatures8',
-    imageClass: 'pro-icon2',
-    src: '/files/features/production-control.svg',
-    title: 'Production control',
-    description: 'Hub Pro adds team controls, permissions, and safer routing for bigger installations.'
-  },
-  {
-    iconWrapperClass: 'iconfeatures9',
-    imageClass: 'service-icon2',
-    src: '/files/features/services-sdk.svg',
-    title: 'Services SDK',
-    description: 'Hub Lite helps register workers and sends jobs to the right service automatically.'
-  },
-  {
-    iconWrapperClass: 'iconfeatures10',
-    imageClass: 'vector-icon4',
-    src: '/files/features/transport.svg',
-    title: 'Transport',
+    icon: 'network',
+    title: 'Connect Devices',
     description:
-      'Channel handles message flow across request, stream, and event patterns, with automatic reconnect support.'
+      'Hub allows you to connect your devices into a single cluster. Give your old iPhone a chance to live and do something meaningful'
   },
   {
-    iconWrapperClass: 'iconfeatures11',
-    imageClass: 'vector-icon5',
-    src: '/files/features/operations.svg',
-    title: 'Operations',
-    description: 'Hub Launcher packages app deployment and running process controls into one simple control area.'
+    icon: 'server.rack',
+    title: 'Run Services',
+    description:
+      'Each service connects to Hub and publishes its API, turning tools like encoders, AI, file access, terminal commands, into reusable capabilities.'
+  },
+  {
+    icon: 'arrow.trianglehead.branch',
+    title: 'Balance Load',
+    description: 'When multiple services provide the same API, Hub splits requests between them automatically.'
+  },
+  {
+    icon: 'play.circle',
+    title: 'Stay Online',
+    description:
+      'Hub Launcher keeps hubs, servers, services, and other processes running. If something crashes, it will restart it'
+  },
+  {
+    icon: 'externaldrive.connected.to.line.below',
+    title: 'Share Storage',
+    description: 'Use your devices as remote storage or use any S3 Cloud Storage provider for you or your services'
+  },
+  {
+    icon: 'lock.shield',
+    title: 'Control Access',
+    description: 'Hub Pro adds authorization, permission groups. Enter lockdown mode to keep strangers off your Hub'
   }
 ];
 

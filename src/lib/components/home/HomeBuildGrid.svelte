@@ -14,17 +14,22 @@
 <style>
   .how-built-information {
     align-self: stretch;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
+    justify-items: center;
     gap: clamp(16px, 2vw, 24px);
     font-size: 16px;
+    width: 100%;
+    max-width: 672px;
+    margin: 0 auto;
   }
 
   @media (max-width: 767px) {
     .how-built-information {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+      max-width: 100%;
       gap: 16px;
     }
   }

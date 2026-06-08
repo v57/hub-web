@@ -29,8 +29,42 @@ describe('home content', () => {
       '/files/platforms/macos.svg',
       '/files/platforms/visionos.svg'
     ]);
-    expect(featureCards).toHaveLength(6);
-    expect(buildCards).toHaveLength(5);
+    expect(featureCards.map((card) => card.title)).toEqual([
+      'Device Mesh',
+      'Local Compute',
+      'Service APIs',
+      'Shared Storage',
+      'Auto Launcher',
+      'Load Balance',
+      'Access Control',
+      'Open Source'
+    ]);
+    expect(featureCards.map((card) => card.icon)).toEqual([
+      'link',
+      'cpu',
+      'server.rack',
+      'externaldrive.connected.to.line.below',
+      'play.circle',
+      'scale.3d',
+      'lock.shield',
+      'heart.circle'
+    ]);
+    expect(buildCards.map((card) => card.title)).toEqual([
+      'Connect Devices',
+      'Run Services',
+      'Balance Load',
+      'Stay Online',
+      'Share Storage',
+      'Control Access'
+    ]);
+    expect(buildCards.map((card) => card.icon)).toEqual([
+      'network',
+      'server.rack',
+      'arrow.trianglehead.branch',
+      'play.circle',
+      'externaldrive.connected.to.line.below',
+      'lock.shield'
+    ]);
     expect(communityLinks.map((link) => link.title)).toEqual(['GitHub', 'Reddit', 'Discord', 'Twitter']);
     expect(getStartedPlatforms.map((platform) => platform.name)).toEqual(['macOS', 'Docker', 'Windows']);
     expect(getStartedPlatforms[0].steps.map((step) => step.command)).toEqual([
