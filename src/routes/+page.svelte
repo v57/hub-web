@@ -1,18 +1,18 @@
 <script lang="ts">
-  import Toolbar from '$lib/components/Toolbar.svelte';
-  import { getToolbarConfig } from '$lib/components/toolbar';
-  import HomeBuildGrid from '$lib/components/home/HomeBuildGrid.svelte';
-  import HomeCommunityGrid from '$lib/components/home/HomeCommunityGrid.svelte';
-  import HomeFeatureGrid from '$lib/components/home/HomeFeatureGrid.svelte';
-  import HomeGetStarted from '$lib/components/home/HomeGetStarted.svelte';
-  import HomeHero from '$lib/components/home/HomeHero.svelte';
-  import HomeIntro from '$lib/components/home/HomeIntro.svelte';
-  import { buildCards, communityLinks, featureCards, platforms } from '$lib/components/home/content';
-  const toolbar = getToolbarConfig('home');
+  import Toolbar from '$lib/components/Toolbar.svelte'
+  import { getToolbarConfig } from '$lib/components/toolbar'
+  import HomeBuildGrid from '$lib/components/home/HomeBuildGrid.svelte'
+  import HomeCommunityGrid from '$lib/components/home/HomeCommunityGrid.svelte'
+  import HomeFeatureGrid from '$lib/components/home/HomeFeatureGrid.svelte'
+  import HomeGetStarted from '$lib/components/home/HomeGetStarted.svelte'
+  import HomeHero from '$lib/components/home/HomeHero.svelte'
+  import HomeIntro from '$lib/components/home/HomeIntro.svelte'
+  import { buildCards, communityLinks, featureCards, platforms, futurePlatforms } from '$lib/components/home/content'
+  const toolbar = getToolbarConfig('home')
 </script>
 
 <div class="home">
-  <HomeHero {platforms} />
+  <HomeHero {platforms} {futurePlatforms} />
   <HomeGetStarted />
   <HomeIntro />
   <div class="keep-exploring-section">

@@ -2,6 +2,7 @@
   import type { HomePlatform } from './content'
 
   export let platforms: HomePlatform[] = []
+  export let futurePlatforms: HomePlatform[] = []
 </script>
 
 <div class="hero-section">
@@ -18,6 +19,21 @@
       <span class="logo-text">Available on</span>
       <div class="platforms">
         {#each platforms as platform}
+          <div class="platform">
+            <div class="platform-name">{platform.name}</div>
+            <div class={platform.wrapperClass}>
+              <img
+                class={[platform.iconClass, platform.iconAdjustClass].filter(Boolean).join(' ')}
+                src={platform.src}
+                alt=""
+              />
+            </div>
+          </div>
+        {/each}
+      </div>
+      <span class="logo-text">Coming very soon</span>
+      <div class="platforms">
+        {#each futurePlatforms as platform}
           <div class="platform">
             <div class="platform-name">{platform.name}</div>
             <div class={platform.wrapperClass}>
