@@ -16,5 +16,6 @@ describe('toolbar config', () => {
   it('shares the page title for the section pages', () => {
     expect(getToolbarConfig('feedback').pageName).toBe('Feedback');
     expect(getToolbarConfig('pricing').pageName).toBe('Pricing');
+    expect(getToolbarConfig('privacy').pageName).toBe('Privacy Policy');
   });
 });

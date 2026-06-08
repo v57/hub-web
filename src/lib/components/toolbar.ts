@@ -1,4 +1,4 @@
-export type ToolbarPage = 'home' | 'feedback' | 'pricing';
+export type ToolbarPage = 'home' | 'feedback' | 'pricing' | 'privacy';
 
 export type ToolbarVariant = 'muted' | 'solid' | 'outline';
 
@@ -37,6 +37,16 @@ export const toolbarConfigs = {
     brandIconSrc: '/files/icon/compact.png',
     pageName: 'Pricing',
     actions: [
+      { label: 'Feedback', href: '/feedback', variant: 'muted' },
+      { label: 'Download', variant: 'solid' },
+      { label: 'Open', variant: 'outline' }
+    ]
+  },
+  privacy: {
+    brandIconSrc: '/files/icon/compact.png',
+    pageName: 'Privacy Policy',
+    actions: [
+      { label: 'Pricing', href: '/pricing', variant: 'muted' },
       { label: 'Feedback', href: '/feedback', variant: 'muted' },
       { label: 'Download', variant: 'solid' },
       { label: 'Open', variant: 'outline' }
