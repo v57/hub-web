@@ -11,6 +11,7 @@ export type PricingPlan = {
   ctaClass: string
   badgeLabel: string
   ctaLabel: string
+  ctaHref: string
   supportText: string
 }
 
@@ -31,7 +32,8 @@ export const litePlan: PricingPlan = {
   topRowClass: 'frame-parent',
   ctaClass: 'buttonget2',
   badgeLabel: 'Free',
-  ctaLabel: 'Download Lite',
+  ctaLabel: 'Install Lite',
+  ctaHref: 'https://github.com/v57/hub-lite',
   supportText: 'Always free · Support optional',
 }
 
@@ -49,7 +51,8 @@ export const proPlan: PricingPlan = {
   topRowClass: 'frame-group',
   ctaClass: 'buttonget4',
   badgeLabel: 'Free',
-  ctaLabel: 'Download Pro',
+  ctaLabel: 'Install Pro',
+  ctaHref: 'https://github.com/v57/hub-pro',
   supportText: 'Always free · Support optional',
 }
 

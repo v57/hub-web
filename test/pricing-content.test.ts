@@ -5,8 +5,12 @@ describe('pricing content', () => {
   it('keeps the plan data grouped by section', () => {
     expect(litePlan.name).toBe('Hub Lite');
     expect(litePlan.features).toHaveLength(2);
+    expect(litePlan.ctaLabel).toBe('Install Lite');
+    expect(litePlan.ctaHref).toBe('https://github.com/v57/hub-lite');
     expect(proPlan.name).toBe('Hub Pro');
     expect(proPlan.features).toHaveLength(6);
+    expect(proPlan.ctaLabel).toBe('Install Pro');
+    expect(proPlan.ctaHref).toBe('https://github.com/v57/hub-pro');
   });
 
   it('keeps the support options in one place', () => {

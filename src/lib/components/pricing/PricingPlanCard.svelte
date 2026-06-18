@@ -16,9 +16,9 @@
     </div>
   </div>
   <div class="button-container">
-    <div class={plan.ctaClass}>
+    <a class={plan.ctaClass} href={plan.ctaHref} target="_blank" rel="noreferrer">
       <span class="plan-name">{plan.ctaLabel}</span>
-    </div>
+    </a>
     <div class="support-text">{plan.supportText}</div>
   </div>
 </div>
@@ -172,6 +172,7 @@
       transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
       filter 220ms ease;
     will-change: transform;
+    text-decoration: none;
   }
 
   .buttonget2::after,
