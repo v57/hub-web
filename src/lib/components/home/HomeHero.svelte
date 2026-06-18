@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { appStoreDownloadHref } from '$lib/components/toolbar'
   import type { HomePlatform } from './content'
 
   export let platforms: HomePlatform[] = []
@@ -10,9 +11,9 @@
     <div class="logo">
       <span class="logo-text">HUB</span>
     </div>
-    <div class="button">
+    <a class="button" href={appStoreDownloadHref} target="_blank" rel="noreferrer">
       <span class="logo-text">Download</span>
-    </div>
+    </a>
   </div>
   <div class="container2">
     <div class="available-on">
@@ -109,6 +110,7 @@
       background-color 180ms ease;
     will-change: transform, box-shadow, background-color;
     cursor: pointer;
+    text-decoration: none;
   }
 
   @media (prefers-color-scheme: dark) {

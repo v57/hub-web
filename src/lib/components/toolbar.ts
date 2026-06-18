@@ -14,7 +14,7 @@ export type ToolbarConfig = {
   pageName?: string;
 };
 
-const appStoreDownloadHref = 'https://apps.apple.com/app/hub-connect-your-devices/id6777729021';
+export const appStoreDownloadHref = 'https://apps.apple.com/app/hub-connect-your-devices/id6777729021';
 
 export const toolbarConfigs = {
   home: {
