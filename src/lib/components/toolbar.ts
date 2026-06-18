@@ -1,4 +1,4 @@
-export type ToolbarPage = 'home' | 'feedback' | 'pricing' | 'privacy';
+export type ToolbarPage = 'home' | 'pricing' | 'privacy';
 
 export type ToolbarVariant = 'muted' | 'solid' | 'outline';
 
@@ -14,22 +14,14 @@ export type ToolbarConfig = {
   pageName?: string;
 };
 
+const appStoreDownloadHref = 'https://apps.apple.com/app/hub-connect-your-devices/id6777729021';
+
 export const toolbarConfigs = {
   home: {
     brandIconSrc: '/files/icon/compact.png',
     actions: [
       { label: 'Pricing', href: '/pricing', variant: 'muted' },
-      { label: 'Feedback', href: '/feedback', variant: 'muted' },
-      { label: 'Download', variant: 'solid' },
-      { label: 'Open', variant: 'outline' }
-    ]
-  },
-  feedback: {
-    brandIconSrc: '/files/icon/compact.png',
-    pageName: 'Feedback',
-    actions: [
-      { label: 'Pricing', href: '/pricing', variant: 'muted' },
-      { label: 'Download', variant: 'solid' },
+      { label: 'Download', href: appStoreDownloadHref, variant: 'solid' },
       { label: 'Open', variant: 'outline' }
     ]
   },
@@ -37,8 +29,8 @@ export const toolbarConfigs = {
     brandIconSrc: '/files/icon/compact.png',
     pageName: 'Pricing',
     actions: [
-      { label: 'Feedback', href: '/feedback', variant: 'muted' },
-      { label: 'Download', variant: 'solid' },
+      { label: 'Pricing', href: '/pricing', variant: 'muted' },
+      { label: 'Download', href: appStoreDownloadHref, variant: 'solid' },
       { label: 'Open', variant: 'outline' }
     ]
   },
@@ -47,8 +39,7 @@ export const toolbarConfigs = {
     pageName: 'Privacy Policy',
     actions: [
       { label: 'Pricing', href: '/pricing', variant: 'muted' },
-      { label: 'Feedback', href: '/feedback', variant: 'muted' },
-      { label: 'Download', variant: 'solid' },
+      { label: 'Download', href: appStoreDownloadHref, variant: 'solid' },
       { label: 'Open', variant: 'outline' }
     ]
   }

@@ -9,8 +9,7 @@ export type ScreenshotPage = {
 
 export const appPages: ScreenshotPage[] = [
   { name: 'home', path: '/' },
-  { name: 'pricing', path: '/pricing' },
-  { name: 'feedback', path: '/feedback' }
+  { name: 'pricing', path: '/pricing' }
 ];
 
 export async function captureScreenshots(options: {
