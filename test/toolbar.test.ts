@@ -7,7 +7,13 @@ describe('toolbar config', () => {
 
     expect(toolbar.pageName).toBeUndefined();
     expect(toolbar.actions.map((action) => action.label)).toEqual(['Pricing', 'Download', 'Open']);
-    expect(toolbar.actions.filter((action) => action.href).map((action) => action.href)).toEqual(['/pricing']);
+    expect(toolbar.actions.filter((action) => action.href).map((action) => action.href)).toEqual([
+      '/pricing',
+      'https://apps.apple.com/app/hub-connect-your-devices/id6777729021'
+    ]);
+    expect(toolbar.actions.find((action) => action.label === 'Download')?.href).toBe(
+      'https://apps.apple.com/app/hub-connect-your-devices/id6777729021'
+    );
   });
 
   it('shares the page title for the section pages', () => {
