@@ -8,7 +8,7 @@
 <div class="community-links-container">
   {#each links as link}
     <IconLink
-      href="https://github.com/v57"
+      href={link.href}
       imageSrc={link.imageSrc}
       darkImageSrc={link.darkImageSrc}
       imageClass={link.imageClass}
@@ -26,24 +26,13 @@
 
 <style>
   .link,
-  .link2,
-  .link3,
-  .link4 {
+  .link2 {
     grid-column: 1;
     grid-row: 1;
   }
 
   .link2 {
     grid-column: 2;
-  }
-
-  .link3 {
-    grid-row: 2;
-  }
-
-  .link4 {
-    grid-column: 2;
-    grid-row: 2;
   }
 
   .community-links-container {
@@ -78,9 +67,7 @@
 
   @media (prefers-color-scheme: dark) {
     .community-links-container :global(.link .icon-link-tile),
-    .community-links-container :global(.link2 .icon-link-tile),
-    .community-links-container :global(.link3 .icon-link-tile),
-    .community-links-container :global(.link4 .icon-link-tile) {
+    .community-links-container :global(.link2 .icon-link-tile) {
       box-shadow:
         inset 0 0 0 1px var(--color-border),
         0 4px 20px rgb(0 0 0 / 0.24);
@@ -89,11 +76,7 @@
     .community-links-container :global(.link:hover .icon-link-tile),
     .community-links-container :global(.link:focus-visible .icon-link-tile),
     .community-links-container :global(.link2:hover .icon-link-tile),
-    .community-links-container :global(.link2:focus-visible .icon-link-tile),
-    .community-links-container :global(.link3:hover .icon-link-tile),
-    .community-links-container :global(.link3:focus-visible .icon-link-tile),
-    .community-links-container :global(.link4:hover .icon-link-tile),
-    .community-links-container :global(.link4:focus-visible .icon-link-tile) {
+    .community-links-container :global(.link2:focus-visible .icon-link-tile) {
       box-shadow:
         inset 0 0 0 1px var(--color-border),
         0 8px 22px rgb(0 0 0 / 0.3);

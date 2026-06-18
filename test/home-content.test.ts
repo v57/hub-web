@@ -4,30 +4,29 @@ import {
   communityLinks,
   featureCards,
   getStartedPlatforms,
+  futurePlatforms,
   platforms
 } from '../src/lib/components/home/content';
 
 describe('home content', () => {
   it('keeps the homepage data grouped by section', () => {
-    expect(platforms.map((platform) => platform.name)).toEqual([
+    expect([...platforms, ...futurePlatforms].map((platform) => platform.name)).toEqual([
       'macOS',
       'iOS',
       'tvOS',
       'visionOS',
-      'watchOS',
+      'Web',
       'Windows',
       'Linux',
-      'Web'
     ]);
-    expect(platforms.map((platform) => platform.src)).toEqual([
+    expect([...platforms, ...futurePlatforms].map((platform) => platform.src)).toEqual([
       '/files/platforms/ios.svg',
       '/files/platforms/watchos.svg',
       '/files/platforms/tvos.svg',
       '/files/platforms/web.svg',
-      '/files/platforms/linux.svg',
+      '/files/platforms/visionos.svg',
       '/files/platforms/windows.svg',
-      '/files/platforms/macos.svg',
-      '/files/platforms/visionos.svg'
+      '/files/platforms/macos.svg'
     ]);
     expect(featureCards.map((card) => card.title)).toEqual([
       'Device Mesh',
@@ -65,7 +64,11 @@ describe('home content', () => {
       'externaldrive.connected.to.line.below',
       'lock.shield'
     ]);
-    expect(communityLinks.map((link) => link.title)).toEqual(['GitHub', 'Reddit', 'Discord', 'Twitter']);
+    expect(communityLinks.map((link) => link.title)).toEqual(['GitHub', 'Discord']);
+    expect(communityLinks.map((link) => link.href)).toEqual([
+      'https://github.com/v57',
+      'https://discord.gg/DqsS4zarJM'
+    ]);
     expect(getStartedPlatforms.map((platform) => platform.name)).toEqual(['macOS', 'Docker', 'Windows']);
     expect(getStartedPlatforms[0].steps.map((step) => step.command)).toEqual([
       'curl -fsSL https://bun.sh/install | bash',

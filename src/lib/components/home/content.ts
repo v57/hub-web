@@ -32,6 +32,7 @@ export type HomeGetStartedPlatform = {
 
 export type HomeCommunityLink = {
   outerClass: string
+  href: string
   imageSrc: string
   darkImageSrc?: string
   imageClass: string
@@ -208,6 +209,7 @@ export const getStartedPlatforms: HomeGetStartedPlatform[] = [
 export const communityLinks: HomeCommunityLink[] = [
   {
     outerClass: 'link',
+    href: 'https://github.com/v57',
     imageSrc: '/files/apps/github.svg',
     imageClass: 'vector-icon6 github-icon',
     title: 'GitHub',
@@ -215,24 +217,10 @@ export const communityLinks: HomeCommunityLink[] = [
   },
   {
     outerClass: 'link2',
-    imageSrc: '/files/apps/reddit-svgrepo-com-light.svg',
-    darkImageSrc: '/files/apps/reddit-svgrepo-com.svg',
-    imageClass: 'vector-icon6 reddit-icon',
-    title: 'Reddit',
-    description: '@v57/hub · Discussions & feedback',
-  },
-  {
-    outerClass: 'link3',
+    href: 'https://discord.gg/DqsS4zarJM',
     imageSrc: '/files/apps/discord.svg',
     imageClass: 'vector-icon6',
     title: 'Discord',
     description: '@v57/hub · Chat & updates',
-  },
-  {
-    outerClass: 'link4',
-    imageSrc: '/files/apps/twitter.svg',
-    imageClass: 'vector-icon6',
-    title: 'Twitter',
-    description: '@v57/hub · Announcements & releases',
   },
 ]
