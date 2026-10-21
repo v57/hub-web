@@ -52,7 +52,7 @@ export const proPlan: PricingPlan = {
   ctaClass: 'buttonget4',
   badgeLabel: 'Free',
   ctaLabel: 'Install Pro',
-  ctaHref: 'https://github.com/v57/hub-pro',
+  ctaHref: 'https://github.com/v57/hub-server',
   supportText: 'Always free · Support optional',
 }
 

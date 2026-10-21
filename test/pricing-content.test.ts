@@ -10,7 +10,7 @@ describe('pricing content', () => {
     expect(proPlan.name).toBe('Hub Pro');
     expect(proPlan.features).toHaveLength(6);
     expect(proPlan.ctaLabel).toBe('Install Pro');
-    expect(proPlan.ctaHref).toBe('https://github.com/v57/hub-pro');
+    expect(proPlan.ctaHref).toBe('https://github.com/v57/hub-server');
   });
 
   it('keeps the support options in one place', () => {
